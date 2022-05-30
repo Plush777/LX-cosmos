@@ -1,0 +1,1508 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+    	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		
+<script type="text/javascript" src="/plugins/jquery/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="/plugins/jquery/jquery-ui.min.js" ></script>
+
+<script type="text/javascript" src="/js/common.js" ></script>
+<link rel="stylesheet" href="/css/jquery/jquery-ui.min.css">
+
+
+<link rel="stylesheet" href='/css/common.css'>
+<link rel="stylesheet" href='/css/core.css'>
+<link rel="stylesheet" href='/css/midea-q.css'>
+
+<!-- RealGrid -->
+<script type="text/javascript" src='/plugins/realgrid/realgrid.2.3.1.min.js'></script>
+<script type="text/javascript" src='/plugins/realgrid/realgrid-lic.js'></script>
+<link rel="stylesheet" href='/plugins/realgrid/realgrid-style.css'/>
+<link rel="stylesheet" href='/css/realgrid-cell.css'/>
+
+<script type="text/javascript" src='/plugins/realgrid/libs/jszip.min.js'></script>
+
+<!-- ClipReport -->
+
+<script type='text/javascript' src="/js/clipreport5.js"></script>
+<script type='text/javascript' src="/js/UserConfig5.js"></script>
+<script type='text/javascript' src="/js/oof/OOFDocument.js"></script>
+<link rel="stylesheet" href="/css/clipreport5.css">
+<link rel="stylesheet" href="/css/UserConfig5.css">
+<link rel="stylesheet" href="/css/font.css">
+
+
+<script type="text/javascript" src="/js/module/popupModule.js"></script>
+<script type="text/javascript" src="/js/module/commonModule.js"></script>
+<script type="text/javascript" src="/js/module/customEvent.js"></script>
+<script type="text/javascript" src="/js/module/selectCodeModule.js"></script>
+<script type="text/javascript" src="/js/module/insttModule.js"></script>
+<script type="text/javascript" src="/js/module/jitemModule.js"></script>
+<script type="text/javascript" src="/js/module/gridModule.js"></script>
+<script type="text/javascript" src="/js/lx/aio/biz/cmm/util/util.js"></script>
+<script type="text/javascript" src="/js/lx/aio/biz/cmm/customAlert.js"></script>
+<script type="text/javascript" src="/js/lx/aio/biz/cmm/code/CodeManager.js"></script>
+<script type="text/javascript" src="/js/module/reportModule.js"></script>
+<script type="text/javascript" src="/js/lx/aio/biz/cmm/util/AioUtil.js"></script>
+
+
+		<title>지적측량업무지원시스템[235]</title>
+	</head>
+	<body>
+<script type="text/javascript">
+var initContdown = 60*60*2; // 1시간
+var endTime;
+window.onload = function()
+{
+countdown("timer", initContdown);
+}
+
+function fninitTime()
+{
+	endTime = (+new Date) + 1000 * initContdown; //60초
+	//console.log("시간연장");
+}
+
+	function logout() {
+		location.href = '/login/actionLogout.do';
+	}
+
+
+	function fn_btn_infoSearch(){
+		url = "http://knowledge.lx.or.kr/ckms/?clcd=17&empuno=000000&deptCode=100000";
+		openWindow(url, "상담지식관리", 1280, 1024);
+	}
+
+	/**
+	 * 새로운 창을 오픈합니다.
+	 * 
+	 * @param	url			url
+	 * @param	winName	화면명
+	 * @param	width		화면 넓이
+	 * @param	height		화면 높이
+	 * @return		없음
+	 */
+	function openWindow(url, winName, width, height){
+		var w = width == 0 || width == undefined ? document.body.clientWidth - 10 : width;
+		var h = width == 0 || width == undefined ? document.body.clientHeight - 30 : height;
+		var option = 'toolbar=no,menubar=no,top=0,left=0,width=' + w + ',height=' + h + ',location=no,directions=no,scrollbars=no,resizable=yes,status=no';
+		
+		var newWin = window.open(url, winName, option);
+		newWin.focus();
+	}
+	
+	
+	/* Timer */
+	function countdown( elementId, seconds){
+	  var element, hours, mins, msLeft, time;
+		
+	  function updateTimer(){
+	    msLeft = endTime - (+new Date);
+		//console.log( '---msLeft--1--:' + msLeft );
+		if ( msLeft < 0 ) { 
+	     // console.log('time out');
+		  alert("로그아웃되었습니다.");
+		  logout();
+		
+	    }else{ 
+		  time = new Date( msLeft );
+	      hours = time.getUTCHours();
+	      mins = time.getUTCMinutes();
+	      element.innerHTML = (hours ? hours + '시 ' + ('0' + mins).slice(-2) : mins) + '분 ' + ('0' + time.getUTCSeconds()).slice(-2)+'초';
+	      setTimeout( updateTimer, 1000); //time.getUTCMilliseconds()
+		  }
+	  }
+
+	  element = document.getElementById( elementId );
+	  endTime = (+new Date) + 1000 * seconds;
+	  updateTimer();
+	}
+	
+</script>
+<!--header-->
+<header class="header-box clb">
+	<div class="left-box">
+	    <a href="/main.do">
+	        <img src="/images/common/cos.png" alt="지적측량업무 지원시스템">
+	    </a>
+	</div>
+    <div class="right-box">
+		<span>
+			<span>본사</span>
+			<div class="m-box"></div>
+			<span>관리자</span>님
+		</span>
+		<span>
+			<span>마지막 접속 정보:</span>
+			 <span>2021년11월11일</span>
+			<span>13시15분57초</span>
+			<span>(10.10.34.50)</span>
+		</span>
+ 		<span>
+		<span id ="timer"></span>
+		<span>뒤에 자동으로 로그아웃 합니다.</span>
+		</span>
+		<button class="btn log-out" onclick="fninitTime();" style="cursor: pointer;">로그인 연장</button>
+		<button class="btn log-out" onclick="logout();" style="cursor: pointer;">로그아웃</button>
+	</div>
+</header>
+<nav class="clb">
+	<div>
+	    <div class="left-box clb">
+	        <div class="navigation-now">
+ <span>일정</span><span>>></span><span>측량일정관리</span>
+	        </div>
+
+	        <ul class="common-nav-box">
+<li>
+<a href="#" onclick="return false;">접수</a>
+<ul class="common-nav-depth">
+<li>
+<a href="/cr/cr10/list.do">일반접수처리</a>
+</li>
+<li>
+<a href="/cr/cr20/list.do">특수접수처리</a>
+</li>
+<li>
+<a href="/cr/cr30/list.do">일반접수목록</a>
+</li>
+<li>
+<a href="/cr/cr40/list.do">특수접수목록</a>
+</li>
+<li>
+<a href="/cr/cr50/list.do">선수금</a>
+</li>
+<li>
+<a href="/cr/cr60/list.do">업무이관</a>
+</li>
+<li>
+<a href="/cr/cr90/list.do">인지세대장</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">일정</a>
+<ul class="common-nav-depth">
+<li>
+<a href="/sc/sc10/list.do">측량일정관리</a>
+</li>
+<li>
+<a href="/sc/sc20/list.do">예약불가측량팀관리</a>
+</li>
+<li>
+<a href="/sc/sc30/list.do">집행지시관리</a>
+</li>
+<li>
+<a href="/sc/sc40/list.do">출장관리</a>
+</li>
+<li>
+<a href="/sc/sc50/list.do">미결업무조회</a>
+</li>
+<li>
+<a href="/sc/sc60/list.do">측량수행계획서</a>
+</li>
+<li>
+<a href="/sc/sc70/list.do">랜디-i 신청일정관리</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">정산</a>
+<ul class="common-nav-depth">
+<li>
+<a href="/ec/ec10/list2.do">정산</a>
+</li>
+<li>
+<a href="/ec/ec20/list.do">청구통합관리</a>
+</li>
+<li>
+<a href="/ec/ec30/list.do">수입통합관리</a>
+</li>
+<li>
+<a href="/ec/ec41/list.do">미반환금대장</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">카드</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ec/ec51/list.do">카드승인/청구</a>
+</li>
+<li>
+<a href="/ec/ec52/list.do">카드결제내역</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">미수수수료</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ec/ec61/list.do">미수수수료대장</a>
+</li>
+<li>
+<a href="/ec/ec62/list.do">미수수수료상세</a>
+</li>
+<li>
+<a href="/ec/ec63/list.do">미수수수료수입관리대장</a>
+</li>
+<li>
+<a href="/ec/ec71/list.do">종목별수입현황</a>
+</li>
+<li>
+<a href="/ec/ec72/list.do">기관별현황</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">현황</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ec/ec75/list.do">기관별수입현황</a>
+</li>
+<li>
+<a href="/ec/ec73/list.do">종목별반환현황</a>
+</li>
+<li>
+<a href="/ec/ec74/list.do">기관별반환내역</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/ec/ec80/list.do">수수료이기관리</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">성과</a>
+<ul class="common-nav-depth">
+<li>
+<a href="/sg/sg10/list.do">검사요청</a>
+</li>
+<li>
+<a href="/sg/sg20/list.do">성과도수령</a>
+</li>
+<li>
+<a href="/sg/sg30/list.do">성과도교부</a>
+</li>
+<li>
+<a href="/sg/sg40/list.do">성과도교부목록</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">결산</a>
+<ul class="common-nav-depth">
+<li>
+<a href="/sa/sa10m/list.do">수입및반환</a>
+</li>
+<li>
+<a href="/sa/sa20m/list.do">일계표처리</a>
+</li>
+<li>
+<a href="/sa/sa30m/list.do">일일업무처리</a>
+</li>
+<li>
+<a href="/sa/sa40m/list.do">일일업무정산</a>
+</li>
+<li>
+<a href="/sa/sa50m/list.do">자금송금결의서</a>
+</li>
+<li>
+<a href="/sa/sa80m/list.do">일별집계현황</a>
+</li>
+<li>
+<a href="/sa/sa60m/list.do">월결산</a>
+</li>
+<li>
+<a href="/sa/sa70m/list.do">연이월</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">계산서</a>
+<ul class="common-nav-depth">
+<li>
+<a href="/fe/fe20/list.do">현금영수증발행</a>
+</li>
+<li>
+<a href="/fe/fe30/list.do">세금계산서발행</a>
+</li>
+<li>
+<a href="/fe/fe40/list.do">현금영수증대장</a>
+</li>
+<li>
+<a href="/fe/fe50/list.do">세금계산서대장</a>
+</li>
+<li>
+<a href="/fe/fe60/list.do">부가세처리대장</a>
+</li>
+<li>
+<a href="/fe/fe70/list.do">전자세금계산서대장</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">부가세현황</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/fe/fe80/list.do">완료대비부가세</a>
+</li>
+<li>
+<a href="/fe/fe90/list.do">부가세전송현황</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">통계</a>
+<ul class="common-nav-depth">
+<li class="has-depth">
+<a href="#" onclick="return false;">실적통계</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ss/ss20/selectStatisticsList.do">접수통계</a>
+</li>
+<li>
+<a href="/ss/ss30/selectActualResult.do">실적통계</a>
+</li>
+<li>
+<a href="/ss/ss133/ss133.do">유관기관별실적</a>
+</li>
+<li>
+<a href="/ss/ss160/list.do">개방업무추진실적</a>
+</li>
+<li>
+<a href="/ss/ss180/ss180.do">업무처리실적</a>
+</li>
+<li>
+<a href="/ss/ss140/getSs140mView.do">특수업무현황</a>
+</li>
+<li>
+<a href="/ss/ss100/getSs100mView.do">업무처리부</a>
+</li>
+<li>
+<a href="/ss/ss230/selectKcscistJob.do">지사별업무추진현황</a>
+</li>
+<li>
+<a href="#" onclick="return false;">소면적통계</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">팀장실적관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ss/ss114/list.do">팀장출장실적</a>
+</li>
+<li>
+<a href="/ss/ss111/getSs111mView.do">팀장별업무종목실적현황</a>
+</li>
+<li>
+<a href="/ss/ss112/list.do">팀장별미결업무현황</a>
+</li>
+<li>
+<a href="/ss/ss113/getSs113mView.do">근평실적</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">수수료경감</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ss/ss131/getSs131mView.do">수수료경감실적</a>
+</li>
+<li>
+<a href="/ss/ss132/getSs132mView.do">수수료경감업무</a>
+</li>
+<li>
+<a href="/ss/ss134/getSs134mView.do">지역별수수료경감실적</a>
+</li>
+<li>
+<a href="/ss/ss420/ss420.do">수수료감면미적용상세</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">신규사업</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ss/ss121/getSS121mView.do">신규사업관리</a>
+</li>
+<li>
+<a href="/ss/ss120/getSS120mView.do">신규사업통계</a>
+</li>
+<li>
+<a href="/ss/ss200/list.do">국토정보조사관리</a>
+</li>
+<li>
+<a href="/ss/ss123/list.do">유형별월별목표량</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">만족도</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ss/ss150/ss150.do">고객만족도</a>
+</li>
+<li>
+<a href="/ss/ss151/ss151.do">고객만족도통계</a>
+</li>
+<li>
+<a href="/ss/ss152/list.do">성과검사만족도</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">분석및보고</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ss/ss400/ss400.do">주간(측량)팀수 등록</a>
+</li>
+<li>
+<a href="/ss/ss220/selectRiskManage.do">엄무현황분석지도</a>
+</li>
+<li>
+<a href="/ss/ss190/getSs190mView.do">연도별통계</a>
+</li>
+<li>
+<a href="/ss/ss90/getSs90mView.do">처리기간조사표</a>
+</li>
+<li>
+<a href="/ss/ss280/getSs280mView.do">일일업무실적분석표</a>
+</li>
+<li>
+<a href="/ss/ss260/list.do">공휴예약제및휴일근무현황</a>
+</li>
+<li>
+<a href="/ss/ss270/selectCategoryProcessList.do">종목별처리기간 통계</a>
+</li>
+<li>
+<a href="/ss/ss250/list.do">장기미결업무현황</a>
+</li>
+<li>
+<a href="/ss/ss290/selectBusinessTripList.do">전일출장업무</a>
+</li>
+<li>
+<a href="/ss/ss300/getSS300mView.do">연기건수</a>
+</li>
+<li>
+<a href="/ss/ss310/list.do">일간보고</a>
+</li>
+<li>
+<a href="/ss/ss340/ss340.do">지적측량업무처리실적</a>
+</li>
+<li>
+<a href="/ss/ss350/list.do">채권확보 관리</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">접수목록조회</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ss/sscr30/getSscr30mView.do">일반접수목록조회</a>
+</li>
+<li>
+<a href="/ss/sscr30/getSscr40mView.do">특수접수목록조회</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/ss/ss410/list.do">측량업무처리기간 현황</a>
+</li>
+<li>
+<a href="/ss/ss710/selectSurvrect.do">정산이력통계</a>
+</li>
+<li>
+<a href="/ss/ss800/realTimeChgJgrcSelect.do">실시간업무이관현황</a>
+</li>
+<li>
+<a href="/ss/ss900/list.do">아차사고 등록현황</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">목표량</a>
+<ul class="common-nav-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">기본자료생성관리</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">완료예상분석관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">완료예상량등록</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">완료예상량분석</a>
+</li>
+</ul>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">특수업무조서관리</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">수량분석등록관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">업무량등록</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">업무량분석관리</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">단가산출금액관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">단가계수결정등록</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">목표금액분석관리</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">연간목표확정관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">연간목표확정관리</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">증감사유등록</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">적용율등록</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">감소예상등록</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">인력산출</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">월별목표등록관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">월별목표관리</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">월별목표현황</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">통계자료분석관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">기관별목표량책정현황</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">확정측량업무관리</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">유관기관업무관리</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">수치지적측량분석</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">기준정보관리</a>
+<ul class="common-nav-depth">
+<li class="has-depth">
+<a href="#" onclick="return false;">사용자관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/sm/sm109/selectUserManagerList.do">사용자권한관리</a>
+</li>
+<li>
+<a href="/sm/sm109/selectUserAuthList.do">사용자권한신청</a>
+</li>
+<li>
+<a href="/sm/sm108/selectClientList.do">의뢰인관리</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">수수료관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/sm/sm80/select81List.do">기본자료생성</a>
+</li>
+<li>
+<a href="/sm/sm80/select82List.do">기본공수관리</a>
+</li>
+<li>
+<a href="/sm/sm80/sm83List.do">적용구분관리</a>
+</li>
+<li>
+<a href="/sm/sm80/sm84List.do">체감계수관리</a>
+</li>
+<li>
+<a href="/sm/sm8b/list.do">기계경비산출</a>
+</li>
+<li>
+<a href="/sm/sm8c/list.do">재료소모품비산출</a>
+</li>
+<li>
+<a href="/sm/sm85/list.do">직간접비등록</a>
+</li>
+<li>
+<a href="/sm/sm86/list.do">면적단가산출</a>
+</li>
+<li>
+<a href="/sm/sm88/list.do">수수료표조회</a>
+</li>
+<li>
+<a href="/sm/sm89/list.do">기본단가대비</a>
+</li>
+<li>
+<a href="/sm/sm80/list.do">업무종목별단가산출</a>
+</li>
+<li>
+<a href="/sm/sm8a/list.do">업무종목관리</a>
+</li>
+<li>
+<a href="/sm/sm8e/list.do">수수료이관관리</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/sm/sm101/selectSurveyTeamList.do">측량팀관리</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">기관관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/sm/sm102/selectInsttHistMgtList.do">기관이력관리</a>
+</li>
+<li>
+<a href="/sm/sm106/list.do">소관청이력관리</a>
+</li>
+<li>
+<a href="/sm/sm103/list.do">소재지관리</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/sm/sm105/list.do">경감및무료봉사</a>
+</li>
+<li>
+<a href="/sm/sm104/list.do">소관청별수입계좌관리</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">전송관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/sm/sm33/list.do">SMS전송</a>
+</li>
+<li>
+<a href="/sm/sm34/list.do">Email전송</a>
+</li>
+<li>
+<a href="/sm/sm35/list.do">SMS전송이력</a>
+</li>
+<li>
+<a href="/sm/sm36/list.do">Email전송이력</a>
+</li>
+<li>
+<a href="/ss/ss330/list.do">SMS전송이력(일정)</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">지적정보관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/sm/sm61/list.do">소관청별 조례 관리</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">지적법 및 규정관리</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">검사정보관리</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">측량목적관리</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">기관통폐합</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/sm/sm110/list.do">지사분리관리</a>
+</li>
+<li>
+<a href="/sm/sm111/list.do">토지소재지분리</a>
+</li>
+<li>
+<a href="/sm/sm112/list.do">대상등록</a>
+</li>
+<li>
+<a href="/sm/sm113/list.do">승인처리</a>
+</li>
+<li>
+<a href="/sm/sm114/list.do">지사마감</a>
+</li>
+<li>
+<a href="/sm/sm115/list.do">본부마감</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">본부통폐합</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ma/ma10/list.do">기관이력관리</a>
+</li>
+<li>
+<a href="/ma/ma20/list.do">기관분리관리</a>
+</li>
+<li>
+<a href="/ma/ma30/list.do">토지소재지분리</a>
+</li>
+<li>
+<a href="/ma/ma40/list.do">대상등록</a>
+</li>
+<li>
+<a href="/ma/ma50/list.do">승인처리</a>
+</li>
+<li>
+<a href="/ma/ma60/list.do">마감관리</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/sm/sm140/selectPortalMgtList.do">포털권한관리</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">시스템관리</a>
+<ul class="common-nav-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">메뉴및권한관리</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">게시판관리</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/sm/sm70/selectNoticeList.do">공지사항관리</a>
+</li>
+<li>
+<a href="/sm/sm70/selectQnaList.do">질문및답변</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">상담</a>
+<ul class="common-nav-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">상담</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">상담분배</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">녹취승인</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">상담원모니터링</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">스테이션관리</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">신규통계</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">접수통계</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">콜통계</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">상담통계</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">실적통계</a>
+</li>
+</ul>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">콜센터게시판</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">콜센터게시판</a>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">콜센터게시판접수목록</a>
+</li>
+</ul>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">전년도 일별 근무현황</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#" onclick="return false;">지적재조사</a>
+<ul class="common-nav-depth">
+<li>
+<a style="color: gray" href="#" onclick="return false;">지적재조사 사업관리</a>
+</li>
+<li class="has-depth">
+<a href="#" onclick="return false;">지적재조사통계</a>
+<ul class="common-nav-depth-depth">
+<li>
+<a href="/ss/ss210/ss210.do">지적재조사통계</a>
+</li>
+<li>
+<a href="/ss/ss211/ss211.do">협력수행자추진실적</a>
+</li>
+</ul>
+</li>
+<li>
+<a style="color: gray" href="#" onclick="return false;">재조사공정관리</a>
+</li>
+</ul>
+</li>
+	            
+	        </ul>
+	  </div>
+	  <div class="right-box">
+	    <ul>
+	        <li><a href="javascript:fn_btn_infoSearch();">상담지식관리</a></li>
+	        <li><a href="">★</a></li>
+	        <li><a href="">북마크</a></li>
+	    </ul>
+	  </div>
+	</div>
+</nav>
+		<div class="call-menu-box type00 off2">
+    <a href="" class="arrow-box2">
+        <span class="hidden">열기버튼</span>
+    </a>
+    <div class="who">
+        <span>
+            <span id="sideCnt_userNm" style="font-family: 'NGB';"></span>
+            님
+        </span>
+        <a href="/login/actionLogout.do">로그아웃</a>
+    </div>
+    <div class="where">
+        <div>
+                기관:
+                <span id="kcscistNm"></span>
+        </div>
+        <div class="clb">
+            권한:
+            <span id="chrgAuthrClcdNm"></span>
+            <button id="changeMainAuth" class="btn right-box pointer" onclick="btnAuthChange_clickHandler()">변경</button>
+        </div>
+    </div>
+    <div class="reflash">
+        <button class="btn icon pointer" onclick="btnRefresh_clickHandler('R')">새로고침</button>
+    </div>
+    <ul class="call-menu-list clb">
+        <li>
+	        <div id="geumArea" title="클릭하시면 5일전~금일 수입된 가상계좌 수입건을 확인하실 수 있습니다.">
+	            <span class="call-menu-title pointer" id="geum">가상계좌 수입 (금일)</span>
+	            <div class="flex-box">
+	               <span>일반</span>
+	               <a id="lbtnVtGe" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+	               <span>특수</span>
+	               <a id="lbtnVtSp" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+	            </div>
+	        </div>
+	        
+	        <div id="jeonArea" title="클릭하시면 금일수입된 가상계좌 수입건을 확인하실 수 있습니다." style="display: none;">
+	            <span class="call-menu-title pointer" id="jeon">가상계좌 수입 (5일전~금일)</span>
+	            <div class="flex-box">
+	               <span>일반</span>
+	               <a id="lbtnVtGe_Yes" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+	               <span>특수</span>
+	               <a id="lbtnVtSp_Yes" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+	            </div>
+	        </div>
+	        
+        </li>
+        <li>
+            <div>
+                <span class="call-menu-title">미결업무현황</span>
+                <div class="flex-box">
+                    <span>일반</span>
+                    <a id="lbtnUnComPGe" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>특수</span>
+                    <a id="lbtnUnComPSp" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span class="call-menu-title">미수수수료</span>
+                <div class="flex-box">
+                    <span>일반</span>
+                    <a id="lblUncollectedFeeGe" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>특수</span>
+                    <a id="lblUncollectedFeeSp" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span class="call-menu-title">미반환금현황</span>
+                <div class="flex-box">
+                    <span>일반</span>
+                    <a id="lblNretrnFeeGe" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>특수</span>
+                    <a id="lblNretrnFeeSp" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span class="call-menu-title">전일접수</span>
+                <div class="flex-box">
+                    <span>일반</span>
+                    <a id="lblYesterdayRectGe" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>특수</span>
+                    <a id="lblYesterdayRectSp" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span class="call-menu-title">인터넷접수</span>
+                <div class="flex-box">
+                    <span>일반</span>
+                    <a id="lblInternetRectGe" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>특수</span>
+                    <a id="lblInternetRectSp" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="">
+                <span class="call-menu-title">신용카드</span>
+                <div class="flex-box">
+                    <span>승인</span>
+                    <a id="lblCardCfm" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>청구</span>
+                    <a id="lblCardRqst" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>수입</span>
+                    <a id="lblCardRqstIncome" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                </div>
+                <div class="flex-box">
+                    <span>초과예정</span>
+                    <a id="lblExceedPeriod" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>강제취소</span>
+                    <a id="lblBeCanceled" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span class="call-menu-title">금일현황</span>
+                <div class="flex-box">
+                    <span>접수</span>
+                    <a id="lblTodayRect" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>출장</span>
+                    <a id="lblTodayBsrp" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                    <span>완료</span>
+                    <a id="lblTodayComp" class="pointer" onclick="lbtn_clickHandler(this)">0</a>
+                </div>
+            </div>
+        </li>
+        
+        <li>
+            <div>
+                <span class="call-menu-title">콜센터이첩</span>
+                <div class="flex-box">
+                    <span>일반</span>
+                    <a><span id="lblCallCenterRect" class="pointer" onclick="lbtn_clickHandler(this)">0</span></a>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="btn-list">
+        <a class="btn" onclick="btnFeeSearch_clickHandler()">수수료조회</a>
+        <a class="btn pointer" onclick="btnKcscistInfo_clickHandler()">지사실적</a>
+        <a class="btn pointer" onclick="newJuso()">도로명주소</a>
+        <a class="btn pointer" onclick="OnNPKI()">인증서등록</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="/js/lx/aio/biz/cmm/main/SideCnt.js"></script>
+<script type="text/javascript" src="/js/lx/aio/biz/cmm/main/AppSide.js"></script>
+		<div id="cti" style="display: none;">
+	<div class="call-menu-box off">
+	    <a href="" class="arrow-box">
+	        <span class="hidden">열기버튼</span>
+	    </a>
+	    <div class="left-box">
+	        <ul class="call-menu">
+	            <li><a href="">CTI연결</a></li>
+	            <li><a href="">전화걸기</a></li>
+	            <li><a href="">전화끊기</a></li>
+	            <li><a href="">보류</a></li>
+	            <li><a href="">작업중</a></li>
+	            <li><a href="">대기</a></li>
+	            <li><a href="">이석</a></li>
+	            <li><a href="">호의</a></li>
+	            <li><a href="">호상태조회</a></li>
+	            <li><a href="">호전환</a></li>
+	            <li><a href="">현장상담</a></li>
+	        </ul>
+	    </div><!-- left-box -->
+	    <div class="right-box">
+	        <div class="depth-conts-table">
+	            <div class="depth-conts-row">
+	                <div class="depth-conts-cell">
+	                    <span class="depth-conts-cell-title">상담일</span>
+	                    <span>
+	                            <input type="text">
+	                        </span>
+	                </div>
+	                <div class="depth-conts-cell">
+	                    <span class="depth-conts-cell-title">업무상태</span>
+	                    <span class="half-input">
+	                            <input type="text">
+	                            <input type="text">
+	                        </span>
+	                </div>
+	                <div class="depth-conts-cell">
+	                    <span class="depth-conts-cell-title">대기호</span>
+	                    <span>
+	                            <input type="text">
+	                        </span>
+	                </div>
+	            </div>
+	            <div class="depth-conts-row">
+	                <div class="depth-conts-cell">
+	                    <span class="depth-conts-cell-title">상담원</span>
+	                    <span>
+	                            <input type="text">
+	                        </span>
+	                </div>
+	                <div class="depth-conts-cell">
+	                    <span class="depth-conts-cell-title">CTI상태</span>
+	                    <span class="half-input">
+	                            <input type="text">
+	                            <input type="text">
+	                        </span>
+	                </div>
+	                <div class="depth-conts-cell">
+	                    <span class="depth-conts-cell-title">대기시간</span>
+	                    <span>
+	                            <input type="text">
+	                        </span>
+	                </div>
+	            </div>
+	            <div class="depth-conts-row">
+	                <div class="depth-conts-cell">
+	                    <span class="depth-conts-cell-title">연결전화</span>
+	                    <span>
+	                            <input type="text">
+	                        </span>
+	                </div>
+	                <div class="depth-conts-cell">
+	                        <span class="depth-conts-cell-title">착신지사
+	                        </span>
+	                    <span>
+	                            <input type="text">
+	                        </span>
+	                </div>
+	                <div class="depth-conts-cell">
+	                    <span class="depth-conts-cell-title">갱신시간</span>
+	                    <span>
+	                            <input type="text">
+	                        </span>
+	                </div>
+	            </div>
+	        </div>
+	    </div><!-- right-box -->
+	</div><!-- call-menu-box -->
+</div>
+		<div class="wrap">
+			
+
+
+
+
+
+
+
+<div class="depth-tab-box">
+    <ul class="depth-tab">
+        <li class="on" id="scheduleTab"><a href="">일정처리</a></li>
+        <li class="" id="reScheduleTab"><a href="">재일정처리</a></li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+<div class="depth-box only-depth tab on clb" id="scheduleTb">
+	<div class="depth" >
+	    <div class="depth-title-box clb">
+	        <div class="left-box">
+	            <span class="depth-title">검색조건</span>
+	        </div>
+	        <div class="right-box">
+<!-- 	            <button type="button" class="btn" id="openPop">일정배정</button> -->
+<!-- 	            <button type="button" class="btn" onclick="javascript:fn_survTeamLocation();">측량팀위치확인</button> -->
+	            <button type="button" id="btnUpdate" class="btn" onclick="javascript:fn_chkOverExecute('0');">일정변경</button>
+	            <button type="button" id="btnExecute" class="btn" onclick="javascript:fn_chkOverExecute('1');">집행지시</button>
+	            <button type="button" id="btnCancelExecute" class="btn" onclick="javascript:fn_btnExecuteCancel();">집행지시취소</button>
+	            <button type="button" id="btnDelay" class="btn" onclick="javascript:fn_btnDelay();">일정연기</button>
+	            <button type="button" id="btnMultiDelay" class="btn" onclick="javascript:fn_btnMultiDelay();">일괄연기</button>
+	            <button type="button" id="btnEarlyExct" class="btn" onclick="javascript:fn_btnEarlyExct();">조기집행</button>
+	            <button class="btn icon exel" onclick="javascript:fn_exportScheduleGrid();">엑셀</button>
+	            <button type="button" class="btn" onclick="javascript:fn_btnSearch();">검색</button>
+	            <button class="btn toggle on">
+	                <span class="hidden">접기</span>
+	            </button>
+	        </div>
+	    </div>
+	    <div class="depth-conts clb type01">
+	        <div class="depth-conts-table">
+	            <div class="depth-conts-row">
+	                <div class="depth-conts-cell">
+						
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="instt"></div>
+<script type="text/javascript">
+	window['instt'] = new insttModule();
+	$(window).onload
+	$(document).ready(function() {
+		window['instt']
+		.startup({
+			id : 'instt',
+			depth :'3',
+			showOld : 'false',
+			hqCode : '',
+			brhCode : '',
+			jgrcCode : '',
+			oldChecked : '',
+			addHq : '',
+			addAll : '',
+			changeCallbackFunc : function() {
+				
+			},
+			jgrcEnabled : ''
+		});
+	});
+</script>
+
+						<span class="depth-conts-cell-title">팀 장</span>
+	                    <span>
+	                    	<select id="timhder" name="timhder" style="width: 100px;">
+	                    	</select>
+	                    </span>
+	                	<span class="depth-conts-cell-title">회계연도</span>
+	                	<span>
+	                    	<input type="text" id="txtProcYear" style="width: 50px;" onkeyup="enterKeyEvent(fn_btnSearch)">
+	                	</span>
+	                	<span class="depth-conts-cell-title">검색기준일</span>
+	               		<span>
+	                    	<input type="text" class="date" id="dateDf1" onkeyup="enterKeyEvent(fn_btnSearch)">
+	                    	<label for="dateDf1">
+	                        	<img src="/images/common/calendar.png" alt="달력아이콘">
+	                    	</label>
+	                	</span>
+	                	<span class="depth-conts-cell-title">집행지시일</span>
+	                	<span>
+	                    	<input type="text" class="date" id="dateExp" onkeyup="enterKeyEvent(fn_btnSearch)">
+	                    	<label for="dateExp">
+	                        	<img src="/images/common/calendar.png" alt="달력아이콘">
+	                    	</label>
+	                	</span>
+	            	</div>
+	        	</div>
+		        <div class="depth-conts-row">
+		            <div class="depth-conts-cell">
+		                
+
+
+
+
+
+
+
+
+
+
+<div id="cboJitem"></div>
+<script type="text/javascript">
+	window['cboJitem'] = new jitemModule();
+	$(document).ready(function() {
+		window['cboJitem']
+		.startup({
+			id : 'cboJitem',
+			defaultJobGbn : '',
+			showJobGbn : '',
+			showFeeApplc : '',
+			defaultMsgType : '',
+			spclJobAt : '',
+			useAtDisabled : '',
+			changeCallbackFunc : function() {
+				 
+			},
+			createCompleteFunc : function() {
+				fn_cbUseYnChk() 
+			}
+
+		});
+	});
+</script>
+
+		                <span class="depth-conts-cell-title">총계정/접수번호</span>
+		                <span>
+		                    <input type="text" id="tiTacntNo" style="width: 50px;" onkeyup="enterKeyEvent(fn_btnSearch)">
+		                    <input type="text" id ="tiRectNo" style="width: 50px;" onkeyup="enterKeyEvent(fn_btnSearch)">
+		                    <input type="checkbox" id="cbUseYn" onClick="javascript:fn_cbUseYnChk();">
+		                </span>
+		                <span style="margin-left: 30px;font-family: 'NGEB';">
+		                    	※ [진행구분]
+		                    <span class="c-red" style="margin-left: 15px;">
+		                    		빨강:취소
+		                    </span>
+		                    <span class="c-yellow" style="margin-left: 15px;">
+		                    		황색:정산중
+		                    </span>
+		                    <span class="c-green" style="margin-left: 15px;">
+		                    		녹색:검사중
+		                    </span>
+		                </span>
+		            </div>
+		        </div>
+		        <div class="depth-conts-row btn-box" id="dtBtnGroup"></div>
+	    		</div>
+		</div>
+		<div class="depth-conts-grid-box type03">
+			<div class="depth-conts-grid" id="scheduleGrid"></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="depth-box only-depth tab clb" id="reScheduleTb">
+    <div class="depth" >
+        <div class="depth-title-box clb">
+            <div class="left-box">
+                <span class="depth-title">메뉴정보</span>
+            </div>
+            <div class="right-box">
+                <button type="button" class="btn" onclick="javascript:fn_reScheduleProc();">처리</button>
+                <button type="button" class="btn icon exel" onclick="javascript:fn_exportReScheduleGrid();">엑셀</button>
+                <button type="button" class="btn" onclick="javascript:fn_onSearch();">검색</button>
+                <button type="button" class="btn toggle on">
+                    <span class="hidden">접기</span>
+                </button>
+            </div>
+        </div>
+        <div class="depth-conts clb type01">
+            <div class="depth-conts-table">
+	            <div class="depth-conts-row">
+	                <div class="depth-conts-cell">
+						
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="cbo"></div>
+<script type="text/javascript">
+	window['cbo'] = new insttModule();
+	$(window).onload
+	$(document).ready(function() {
+		window['cbo']
+		.startup({
+			id : 'cbo',
+			depth :'3',
+			showOld : 'false',
+			hqCode : '',
+			brhCode : '',
+			jgrcCode : '',
+			oldChecked : '',
+			addHq : '',
+			addAll : '',
+			changeCallbackFunc : function() {
+				
+			},
+			jgrcEnabled : ''
+		});
+	});
+</script>
+
+						<span class="depth-conts-cell-title">팀 장</span>
+	                    <span>
+	                    	<select id="timhder1" name="timhder1" style="width: 100px;">
+	                    	</select>
+	                    </span>
+						<span class="depth-conts-cell-title">회계연도</span>
+	                	<span>
+	                    	<input type="text" id="txtProcY" style="width: 50px;" onkeyup="enterKeyEvent(fn_onSearch)">
+	                	</span>
+	            	</div>
+	        	</div>
+		        <div class="depth-conts-row">
+		            <div class="depth-conts-cell">
+		                
+
+
+
+
+
+
+
+
+
+
+<div id="jitem"></div>
+<script type="text/javascript">
+	window['jitem'] = new jitemModule();
+	$(document).ready(function() {
+		window['jitem']
+		.startup({
+			id : 'jitem',
+			defaultJobGbn : '',
+			showJobGbn : '',
+			showFeeApplc : '',
+			defaultMsgType : '',
+			spclJobAt : '',
+			useAtDisabled : '',
+			changeCallbackFunc : function() {
+				 
+			},
+			createCompleteFunc : function() {
+				 
+			}
+
+		});
+	});
+</script>
+
+		                <span class="depth-conts-cell-title">접수번호</span>
+		                <span>
+		                    <input type="text" id="txtRectNo" style="width: 50px;" onkeyup="enterKeyEvent(fn_onSearch)">
+		                </span>
+		                <span class="depth-conts-cell-title">처리구분</span>
+		                <span>
+							<input type="radio" id="radio-1" value="4" name="rbShdlasgnSecd" style="display:none;">
+							<label for="radio-1" style="display:none;">AS측량</label>
+							<input type="radio" id="radio-2" value="3" name="rbShdlasgnSecd" checked="checked">
+							<label for="radio-2">재확인측량</label>
+							<input type="radio" id="radio-3"  value="9" name="rbShdlasgnSecd" style="margin-left: 10px;" >
+							<label for="radio-3">재정산측량</label>
+							<input type="radio" id="radio-4" value="5" name="rbShdlasgnSecd" style="margin-left: 10px;">
+							<label for="radio-4">재조사측량</label>
+						</span>
+		            </div>
+		        </div>
+	    	</div>
+        </div>
+        <div class="depth-conts-grid-box type02">
+			<div class="depth-conts-grid type01 over-o" id="reScheduleGrid"></div>
+        	</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	// 일정배정 팝업
+// 	$("#openPop").on("click", function() {
+// 		var data = {
+// //					KCSCIST_CODE		: nvl(KCSCIST_CODE, UserManager.BRH),
+// //					TIMHDER_EMPUNO_NM	: lb_TIMHDER_EMPUNO.label,	//측량팀장
+// //					SHDLASGN_PD			: SHDLASGN_PD,	//측량기간
+// //					RESVE_SURVTM_SECD	: RESVE_SURVTM_SECD,	//측량시간
+// //					PTCLMATR_CN			: PTCLMATR_CN	// 특이사항
+// 				kcscistCode : '700390',
+// 				timhderEmpunoNm	: "황정오",	//측량팀장
+// 				shdlasgnPd : "2021042520210516",	//측량기간
+// 				resveSurvtmSecd	: 2,	//측량시간
+// 				ptclmatrCn : ""	// 특이사항
+// 		};
+
+// 		popupModule.openJobAllocationMainPop(data, function(result){
+// 			console.log(result.detail);
+// 		});
+// 	});
+
+});
+</script>
+<script type="text/javascript" src="/js/lx/aio/biz/cmm/util/map.js"></script>
+<script type="text/javascript" src="/js/lx/aio/biz/sc/sc10/sc10m_cmm.js"></script>
+<script type="text/javascript" src="/js/lx/aio/biz/sc/sc10/sc10m_01.js"></script>
+<script type="text/javascript" src="/js/lx/aio/biz/sc/sc10/sc10m_02.js"></script>
+		</div>
+		
+		<div class="loader-wrap" style="display:none;">
+		    <div class="loader-box">
+		        <div class="loader">Loading...</div>
+		    </div>
+		</div>
+	</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		sideCntInit();
+		
+		if(getUserInfo().CHRG_AUTHR_CLCD == '20'){
+			$("#cti").css("display", "block");
+		}
+	});
+</script>
+</html>

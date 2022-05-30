@@ -1,0 +1,1262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	@@include('include/head.html')
+</head>
+<body>
+	<!--header-->
+	@@include('include/subHeader.html')
+	<!--//header-->
+	<!--nav-->
+	<!-- <nav class="clb sub">
+		<div>
+			<div class="left-box clb">
+				<div class="navigation-now">
+					<span>목표령</span>
+					<span>특수업무조서관리</span>
+				</div>
+				<ul class="common-nav-box">
+					<li>
+					<a href="#" onclick="return false;">접수</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/cr/cr10/list.do">일반접수처리</a>
+					</li>
+					<li>
+					<a href="/cr/cr20/list.do">특수접수처리</a>
+					</li>
+					<li>
+					<a href="/cr/cr30/list.do">일반접수목록</a>
+					</li>
+					<li>
+					<a href="/cr/cr40/list.do">특수접수목록</a>
+					</li>
+					<li>
+					<a href="/cr/cr50/list.do">선수금</a>
+					</li>
+					<li>
+					<a href="/cr/cr60/list.do">업무이관</a>
+					</li>
+					<li>
+					<a href="/cr/cr90/list.do">인지세대장</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">일정</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/sc/sc10/list.do">측량일정관리</a>
+					</li>
+					<li>
+					<a href="/sc/sc20/list.do">예약불가측량팀관리</a>
+					</li>
+					<li>
+					<a href="/sc/sc30/list.do">집행지시관리</a>
+					</li>
+					<li>
+					<a href="/sc/sc40/list.do">출장관리</a>
+					</li>
+					<li>
+					<a href="/sc/sc50/list.do">미결업무조회</a>
+					</li>
+					<li>
+					<a href="/sc/sc60/list.do">측량수행계획서</a>
+					</li>
+					<li>
+					<a href="/sc/sc70/list.do">랜디-i 신청일정관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">정산</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/ec/ec10/list2.do">정산</a>
+					</li>
+					<li>
+					<a href="/ec/ec20/list.do">청구통합관리</a>
+					</li>
+					<li>
+					<a href="/ec/ec30/list.do">수입통합관리</a>
+					</li>
+					<li>
+					<a href="/ec/ec41/list.do">미반환금대장</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">카드</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="#" onclick="return false;">카드승인/청구</a>
+					</li>
+					<li>
+					<a href="/ec/ec52/list.do">카드결제내역</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">미수수수료</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ec/ec61/list.do">미수수수료대장</a>
+					</li>
+					<li>
+					<a href="/ec/ec62/list.do">미수수수료상세</a>
+					</li>
+					<li>
+					<a href="/ec/ec63/list.do">미수수수료수입관리대장</a>
+					</li>
+					<li>
+					<a href="/ec/ec71/list.do">종목별수입현황</a>
+					</li>
+					<li>
+					<a href="/ec/ec72/list.do">기관별현황</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">현황</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ec/ec75/list.do">기관별수입현황</a>
+					</li>
+					<li>
+					<a href="/ec/ec73/list.do">종목별반환현황</a>
+					</li>
+					<li>
+					<a href="/ec/ec74/list.do">기관별반환내역</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/ec/ec80/list.do">수수료이기관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">성과</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/sg/sg10/list.do">검사요청</a>
+					</li>
+					<li>
+					<a href="/sg/sg20/list.do">성과도수령</a>
+					</li>
+					<li>
+					<a href="/sg/sg30/list.do">성과도교부</a>
+					</li>
+					<li>
+					<a href="/sg/sg40/list.do">성과도교부목록</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">결산</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/sa/sa10m/list.do">수입및반환</a>
+					</li>
+					<li>
+					<a href="/sa/sa20m/list.do">일계표처리</a>
+					</li>
+					<li>
+					<a href="/sa/sa30m/list.do">일일업무처리</a>
+					</li>
+					<li>
+					<a href="/sa/sa40m/list.do">일일업무정산</a>
+					</li>
+					<li>
+					<a href="/sa/sa50m/list.do">자금송금결의서</a>
+					</li>
+					<li>
+					<a href="/sa/sa80m/list.do">일별집계현황</a>
+					</li>
+					<li>
+					<a href="/sa/sa60m/list.do">월결산</a>
+					</li>
+					<li>
+					<a href="/sa/sa70m/list.do">연이월</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">계산서</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/fe/fe20/list.do">현금영수증발행</a>
+					</li>
+					<li>
+					<a href="/fe/fe30/list.do">세금계산서발행</a>
+					</li>
+					<li>
+					<a href="/fe/fe40/list.do">현금영수증대장</a>
+					</li>
+					<li>
+					<a href="/fe/fe50/list.do">세금계산서대장</a>
+					</li>
+					<li>
+					<a href="/fe/fe60/list.do">부가세처리대장</a>
+					</li>
+					<li>
+					<a href="/fe/fe70/list.do">전자세금계산서대장</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">부가세현황</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/fe/fe80/list.do">완료대비부가세</a>
+					</li>
+					<li>
+					<a href="/fe/fe90/list.do">부가세전송현황</a>
+					</li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">통계</a>
+					<ul class="common-nav-depth">
+					<li class="has-depth">
+					<a href="#" onclick="return false;">실적통계</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss20/selectStatisticsList.do">접수통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss30/selectActualResult.do">실적통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss133/ss133.do">유관기관별실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss160/list.do">개방업무추진실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss180/ss180.do">업무처리실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss140/getSs140mView.do">특수업무현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss100/getSs100mView.do">업무처리부</a>
+					</li>
+					<li>
+					<a href="/ss/ss230/selectKcscistJob.do">지사별업무추진현황</a>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">소면적통계</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">팀장실적관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss114/list.do">팀장출장실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss111/getSs111mView.do">팀장별업무종목실적현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss112/list.do">팀장별미결업무현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss113/getSs113mView.do">근평실적</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">수수료경감</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss131/getSs131mView.do">수수료경감실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss132/getSs132mView.do">수수료경감업무</a>
+					</li>
+					<li>
+					<a href="/ss/ss134/getSs134mView.do">지역별수수료경감실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss420/ss420.do">수수료감면미적용상세</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">신규사업</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss121/getSS121mView.do">신규사업관리</a>
+					</li>
+					<li>
+					<a href="/ss/ss120/getSS120mView.do">신규사업통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss200/list.do">국토정보조사관리</a>
+					</li>
+					<li>
+					<a href="/ss/ss123/list.do">유형별월별목표량</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">만족도</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss150/ss150.do">고객만족도</a>
+					</li>
+					<li>
+					<a href="/ss/ss151/ss151.do">고객만족도통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss152/list.do">성과검사만족도</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">분석및보고</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss400/ss400.do">주간(측량)팀수 등록</a>
+					</li>
+					<li>
+					<a href="/ss/ss220/selectRiskManage.do">엄무현황분석지도</a>
+					</li>
+					<li>
+					<a href="/ss/ss190/getSs190mView.do">연도별통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss90/getSs90mView.do">처리기간조사표</a>
+					</li>
+					<li>
+					<a href="/ss/ss280/getSs280mView.do">일일업무실적분석표</a>
+					</li>
+					<li>
+					<a href="/ss/ss260/list.do">공휴예약제및휴일근무현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss270/selectCategoryProcessList.do">종목별처리기간 통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss250/list.do">장기미결업무현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss290/selectBusinessTripList.do">전일출장업무</a>
+					</li>
+					<li>
+					<a href="/ss/ss300/getSS300mView.do">연기건수</a>
+					</li>
+					<li>
+					<a href="/ss/ss310/list.do">일간보고</a>
+					</li>
+					<li>
+					<a href="/ss/ss340/ss340.do">지적측량업무처리실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss350/list.do">채권확보 관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">접수목록조회</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/sscr30/getSscr30mView.do">일반접수목록조회</a>
+					</li>
+					<li>
+					<a href="/ss/sscr30/getSscr40mView.do">특수접수목록조회</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/ss/ss410/list.do">측량업무처리기간 현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss710/selectSurvrect.do">정산이력통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss800/realTimeChgJgrcSelect.do">실시간업무이관현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss900/list.do">아차사고 등록현황</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">목표량</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">기본자료생성관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">완료예상분석관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">완료예상량등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">완료예상량분석</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">특수업무조서관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">수량분석등록관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">업무량등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">업무량분석관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">단가산출금액관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">단가계수결정등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">목표금액분석관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">연간목표확정관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">연간목표확정관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">증감사유등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">적용율등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">감소예상등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">인력산출</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">월별목표등록관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">월별목표관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">월별목표현황</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">통계자료분석관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">기관별목표량책정현황</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">확정측량업무관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">유관기관업무관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">수치지적측량분석</a>
+					</li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">기준정보관리</a>
+					<ul class="common-nav-depth">
+					<li class="has-depth">
+					<a href="#" onclick="return false;">사용자관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm109/selectUserManagerList.do">사용자권한관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm109/selectUserAuthList.do">사용자권한신청</a>
+					</li>
+					<li>
+					<a href="/sm/sm108/selectClientList.do">의뢰인관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">수수료관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm80/select81List.do">기본자료생성</a>
+					</li>
+					<li>
+					<a href="/sm/sm80/select82List.do">기본공수관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm80/sm83List.do">적용구분관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm80/sm84List.do">체감계수관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm8b/list.do">기계경비산출</a>
+					</li>
+					<li>
+					<a href="/sm/sm8c/list.do">재료소모품비산출</a>
+					</li>
+					<li>
+					<a href="/sm/sm85/list.do">직간접비등록</a>
+					</li>
+					<li>
+					<a href="/sm/sm86/list.do">면적단가산출</a>
+					</li>
+					<li>
+					<a href="/sm/sm88/list.do">수수료표조회</a>
+					</li>
+					<li>
+					<a href="/sm/sm89/list.do">기본단가대비</a>
+					</li>
+					<li>
+					<a href="/sm/sm80/list.do">업무종목별단가산출</a>
+					</li>
+					<li>
+					<a href="/sm/sm8a/list.do">업무종목관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm8e/list.do">수수료이관관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/sm/sm101/selectSurveyTeamList.do">측량팀관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">기관관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm102/selectInsttHistMgtList.do">기관이력관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm106/list.do">소관청이력관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm103/list.do">소재지관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/sm/sm105/list.do">경감및무료봉사</a>
+					</li>
+					<li>
+					<a href="/sm/sm104/list.do">소관청별수입계좌관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">전송관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm33/list.do">SMS전송</a>
+					</li>
+					<li>
+					<a href="/sm/sm34/list.do">Email전송</a>
+					</li>
+					<li>
+					<a href="/sm/sm35/list.do">SMS전송이력</a>
+					</li>
+					<li>
+					<a href="/sm/sm36/list.do">Email전송이력</a>
+					</li>
+					<li>
+					<a href="/ss/ss330/list.do">SMS전송이력(일정)</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">지적정보관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm61/list.do">소관청별 조례 관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">지적법 및 규정관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">검사정보관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">측량목적관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">기관통폐합</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm110/list.do">지사분리관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm111/list.do">토지소재지분리</a>
+					</li>
+					<li>
+					<a href="/sm/sm112/list.do">대상등록</a>
+					</li>
+					<li>
+					<a href="/sm/sm113/list.do">승인처리</a>
+					</li>
+					<li>
+					<a href="/sm/sm114/list.do">지사마감</a>
+					</li>
+					<li>
+					<a href="/sm/sm115/list.do">본부마감</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">본부통폐합</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ma/ma10/list.do">기관이력관리</a>
+					</li>
+					<li>
+					<a href="/ma/ma20/list.do">기관분리관리</a>
+					</li>
+					<li>
+					<a href="/ma/ma30/list.do">토지소재지분리</a>
+					</li>
+					<li>
+					<a href="/ma/ma40/list.do">대상등록</a>
+					</li>
+					<li>
+					<a href="/ma/ma50/list.do">승인처리</a>
+					</li>
+					<li>
+					<a href="/ma/ma60/list.do">마감관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/sm/sm140/selectPortalMgtList.do">포털권한관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">시스템관리</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">메뉴및권한관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">게시판관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm70/selectNoticeList.do">공지사항관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm70/selectQnaList.do">질문및답변</a>
+					</li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">상담</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">상담</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">상담분배</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">녹취승인</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">상담원모니터링</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">스테이션관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">신규통계</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">접수통계</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">콜통계</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">상담통계</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">실적통계</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">콜센터게시판</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">콜센터게시판</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">콜센터게시판접수목록</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">전년도 일별 근무현황</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">지적재조사</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">지적재조사 사업관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">지적재조사통계</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss210/ss210.do">지적재조사통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss211/ss211.do">협력수행자추진실적</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">재조사공정관리</a>
+					</li>
+					</ul>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav> -->
+	<!--//nav-->
+
+	<div class="gnb sub">
+        <div class="menuBg"></div>
+		<div class="navigation-now">
+			<span>목표량</span>
+			<span>특수업무조서관리</span>
+		</div>
+        <ul class="menu">
+          <li>
+            <a href="#" onclick="return false;">사업관리</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측향이력조회</a></li>
+                </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">접수</a>
+            <div class="dep2">
+              <ul>
+                  <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                  <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                  <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                  <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                  <li><a href="/cr/cr50/list.do">선수금</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">일정</a>
+            <div class="dep2">
+              <ul>
+                  <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                  <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">공정관리</a>
+            <div class="dep2">
+              <ul>
+                  <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                  <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                  <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                  <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                  <li><a href="/cr/cr50/list.do">선수금</a></li>
+                  <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                  <li><a href="#">과거측량이력조회</a></li>
+                  <li><a href="#">인지세대장</a></li>
+                  <li><a href="#">일반접수처리</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">정산</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                </ul>
+              </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">성과</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측량이력조회</a></li>
+                    <li><a href="#">인지세대장</a></li>
+                    <li><a href="#">일반접수처리</a></li>
+                </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">결산</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="#">특수접수목록과거<br>이력조회</a></li>
+                    <li><a href="#">일반접수목록</a></li>
+                </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">계산서</a>
+            <div class="dep2">
+              <ul>
+                  <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                  <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">목표량</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                </ul>
+              </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">통계</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측량이력조회</a></li>
+                    <li><a href="#">인지세대장</a></li>
+                    <li><a href="#">일반접수처리</a></li>
+                    <li><a href="#">특수접수처리</a></li>
+                    <li><a href="#">일반접수목록</a></li>
+                    <li><a href="#">특수접수목록</a></li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+    </div>
+	<!--aside-->
+	@@include('include/aside.html')
+	<!--//aside-->
+	<div class="wrap sub default">
+<!--		<script type="text/javascript" src="/js/lx/aio/biz/sg/sg_cmm.js"></script>-->
+<!--		<script type="text/javascript" src="/js/lx/aio/biz/sg/sg20/sg20m.js"></script>-->
+		<style>
+		.multi-line-css {
+			white-space: pre;
+		}
+		.multiline {
+			white-space: pre;
+		}
+		.right {
+			text-align: right;
+		}
+		.rightMultiLine {
+			text-align: right;
+			white-space: pre;
+		}
+		.span-right{
+			float: right;
+		}
+		</style>
+		<div class="depth-tab-box fLeft">
+			<ul class="depth-tab type01">
+				<li id="tab1" class="on"><a href="">입력</a></li>
+				<li id="tab2" class=""><a href="">목록</a></li>
+			</ul>
+		</div>
+		<div class="depth-box type00 fLeft">
+			<div class="depth" style="margin-top: 0;">
+				<div class="depth-title-box clb va-s">
+					<div class="left-box">
+						<span class="depth-title">총계정</span>
+					</div>
+					<div class="right-box">
+						<button class="btn button wd50 dkBlue va-t" id="">삭제</button>
+						<button class="btn button wd50 dkBlue va-t" id="">신규</button>
+						<button class="btn toggle on va-b">
+							<span class="hidden">접기</span>
+						</button>
+					</div>
+				</div>
+				<div class="depth-conts clb type03">
+					<div class="depth-conts-table-box">
+						<div class="depth-conts-table">
+							<div class="depth-conts-row">
+								<div class="depth-conts-cell po-r flexWrap">
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd80">본부</span>
+										<input class="wd120" id="sp-institutionName1Input" type="text">
+									</div>
+
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">지사</span>
+										<input id="sp-institutionName2Input" type="text" class="wd120">
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">소관청</span>
+										<select name="" id="sp-cboProcsJgrcCodeSelect" class="wd120">
+												<option value=""></option>
+										</select>
+										<button id="sp-changeJgrcBtn" class="btn button">업무처리지사변경</button>
+									</div>
+								</div>
+							</div>
+							<div class="depth-conts-row">
+								<div class="depth-conts-cell po-r flexWrap">
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd80">작업년도</span>
+										<input disabled="disabled" class="wd120" id="" type="text">
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">적용년도</span>
+										<input disabled="disabled" id="" type="text" class="wd120">
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">치수</span>
+										<select name="" id="" class="wd120">
+											<option value="">1</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="depth-conts-table-box">
+						<div class="depth-conts-table">
+							<div class="depth-conts-row">
+								<div class="depth-conts-cell po-r flexWrap">
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd80">총계정</span>
+										<input class="wd120" id="" type="text">
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">사업명</span>
+										<input id="" type="text" class="wd120">
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">소재지</span>
+										<input id="" type="text" class="wd120">
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd110">접수방면</span>
+										<select name="" id="" class="wd120">
+												<option value="">서면</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="depth-conts-row">
+								<div class="depth-conts-cell po-r flexWrap">
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd80">사업구분</span>
+										<select name="" id="" class="wd120">
+											<option value="">도로개설(도시계</option>
+										</select>
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">사업량</span>
+										<input id="" type="text" class="wd58">
+										<select name="" id="" class="wd58">
+											<option value="">km</option>
+										</select>
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">작업구간</span>
+										<input id="" type="text" class="wd120">
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd110">사업기간</span>
+										<input type="text" id="dateCert" class="date cal">
+										<label for="dateCert" style="margin: 0;"></label>
+										<span class="hyphen" style="display: inline-block;">~</span>
+										<input type="text" id="dateCert2" class="date cal">
+										<label for="dateCert2"></label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- depth end -->
+			<div class="depth"></div>
+			<!-- depth end -->
+			<div class="depth">
+				<div class="depth-title-box clb va-s">
+					<div class="left-box">
+						<span class="depth-title">각계정</span>
+					</div>
+					<div class="right-box">
+						<button class="btn button pd7 dkBlue va-t" id="">신규(연이월)</button>
+						<button class="btn button pd7 dkBlue va-t" id="">각계정추가</button>
+						<button class="btn button wd50 dkBlue va-t" id="">저장</button>
+						<button class="btn toggle on va-b">
+							<span class="hidden">접기</span>
+						</button>
+					</div>
+				</div>
+				<div class="depth-conts clb type03">
+					<div class="depth-conts-table-box">
+						<div class="depth-conts-table">
+							<div class="depth-conts-row">
+								<div class="depth-conts-cell po-r flexWrap">
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd80">종목</span>
+										<select name="" id="" class="wd120">
+											<option value="">선택하세요</option>
+										</select>
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">토지구분</span>
+										<select name="" id="" class="wd120">
+											<option value=""></option>
+										</select>
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">지역</span>
+										<select name="" id="" class="wd120">
+											<option value="">시</option>
+										</select>
+										<button id="" disabled class="btn button pd7">연속지/집단지</button>
+									</div>
+									<div class="flexBox">
+										<span class="depth-conts-cell-title wd100">신규사업</span>
+										<select name="" id="" class="wd120">
+											<option value="">기존업무</option>
+										</select>
+										<select name="" id="" class="wd120">
+											<option value=""></option>
+										</select>
+										<select name="" id="" class="wd120">
+											<option value=""></option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="depth-conts-table-box">
+						<div class="depth-title-box type00 clb type02 pos-r">
+							<div class="left-box" style="width: 200px;">
+								<span class="depth-title">사업지구 전체 측량업무량</span>
+							</div>
+							<div class="left-box">
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">수량</span>
+									<input id="" type="text" class="wd80" disabled>
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">면적</span>
+									<input id="" type="text" class="wd80">
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">금액</span>
+									<input id="" type="text" class="wd80">
+									<p class="checkbox">
+										<input type="checkbox" id="" class="hidden">
+										<label for="">직접입력</label>
+									</p>
+								</div>
+							</div>
+							<div class="right-box" style="position: absolute;right: 0;top: -5px;">
+								<span class="depth-conts-cell-title wd55">수주율</span>
+								<div class="subBox">
+									<span class="depth-conts-cell-title">면적</span>
+									<input id="" type="text" class="wd80">
+									<span class="percent">%</span>
+									<span class="depth-conts-cell-title wd55" style="margin-left: 20px;">금액</span>
+									<input id="" type="text" class="wd80">
+									<span class="percent">%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="depth-conts-table-box">
+						<div class="depth-title-box type00 clb type02 pos-r">
+							<div class="left-box" style="width: 200px;">
+								<span class="depth-title">2022년 목표량</span>
+							</div>
+							<div class="left-box">
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">수량</span>
+									<input id="" type="text" class="wd80" disabled>
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">면적</span>
+									<input id="" type="text" class="wd80">
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">금액</span>
+									<input id="" type="text" class="wd80">
+									<p class="checkbox">
+										<input type="checkbox" id="" class="hidden">
+										<label for="">직접입력</label>
+									</p>
+								</div>
+							</div>
+							<div class="right-box">
+								<span class="depth-title" style="min-width: auto;vertical-align: bottom;">2022년 이후 목표량</span>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">수량</span>
+									<input id="" type="text" class="wd80" disabled>
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">면적</span>
+									<input id="" type="text" class="wd80">
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">금액</span>
+									<input id="" type="text" class="wd80">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="depth-conts-table-box">
+						<div class="depth-title-box type00 clb type02 pos-r">
+							<div class="left-box" style="width: 200px;">
+								<span class="depth-title">미수주(누수)업무량</span>
+							</div>
+							<div class="left-box">
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">수량</span>
+									<input id="" type="text" class="wd80" disabled>
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">면적</span>
+									<input id="" type="text" class="wd80">
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title pd20">금액</span>
+									<input id="" type="text" class="wd80">
+									<p class="checkbox">
+										<input type="checkbox" id="" class="hidden">
+										<label for="">직접입력</label>
+									</p>
+								</div>
+							</div>
+							<div class="right-box">
+								<span class="depth-title" style="min-width: auto;vertical-align: bottom;">확정업무</span>
+								<input id="" type="text" class="wd300">
+							</div>
+						</div>
+					</div>
+					<div class="depth-conts-table-box">
+						<div class="depth-title-box type00 clb type02 pos-r">
+							<div class="left-box" style="width: 200px;">
+								<span class="depth-title">월목표반영</span>
+							</div>
+							<div class="left-box">
+								<div class="flexBox">
+									<span class="depth-conts-cell-title wd80 pd20">착수월</span>
+									<select name="" id="" class="wd60">
+										<option value="">1월</option>
+									</select>
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title wd100">완료월</span>
+									<select name="" id="" class="wd60">
+										<option value="">1월</option>
+									</select>
+								</div>
+								<div class="flexBox">
+									<span class="depth-conts-cell-title wd100">확정업무</span>
+									<select name="" id="" class="wd120">
+										<option value=""></option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- depth-conts end -->
+			</div>
+			<!-- depth end -->
+			<div class="depth">
+				<div class="depth-title-box clb">
+					<div class="left-box">
+						<span class="depth-title">각계정 세부 목록</span>
+					</div>
+					<div class="right-box">
+						<button class="btn button wd50 dkBlue va-t" id="">삭제</button>
+						<button class="btn toggle on va-b">
+							<span class="hidden">접기</span>
+						</button>
+					</div>
+				</div>
+				<div class="depth-conts" style="padding: 20px;">
+					<div id="sp-surveyRectGrid" class="depth-conts-grid" style="height: 200px; overflow: auto;margin-top: 0;background-color: #dbdbdb;">
+						그리드영역
+					</div>
+				</div>
+				<!-- depth-conts end -->
+			</div>
+			<!-- depth end -->
+		</div>
+	</div>
+	<!--quick-->
+	@@include('include/quick_type02.html')
+	<!--//quick-->
+	<div class="loader-wrap" style="display:none;">
+		<div class="loader-box">
+			<div class="loader">Loading...</div>
+		</div>
+	</div>
+</body>
+<!-- <script type="text/javascript">
+$(document).ready(function() {
+	sideCntInit();
+
+	if(getUserInfo().CHRG_AUTHR_CLCD == '20'){
+		$("#cti").css("display", "block");
+	}
+});
+</script> -->
+</html>

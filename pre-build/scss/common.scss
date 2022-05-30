@@ -1,0 +1,209 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'NanumSquare R';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/nanumSquare/NanumSquareR.eot);
+  src: url(./font/nanumSquare/NanumSquareR.eot?#iefix) format("embedded-opentype"), url(./font/nanumSquare/NanumSquareR.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'NanumSquare B';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/nanumSquare/NanumSquareB.eot);
+  src: url(./font/nanumSquare/NanumSquareB.eot?#iefix) format("embedded-opentype"), url(./font/nanumSquare/NanumSquareB.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'NanumSquare EB';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/nanumSquare/NanumSquareEB.eot);
+  src: url(./font/nanumSquare/NanumSquareEB.eot?#iefix) format("embedded-opentype"), url(./font/nanumSquare/NanumSquareEB.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Noto Sans Light';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/notoSans/eot/NotoSansKR-Light-Hestia.eot);
+  src: url(./font/notoSans/eot/NotoSansKR-Light-Hestia.eot?#iefix) format("embedded-opentype"), url(./font/notoSans/woff/NotoSansKR-Light-Hestia.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Noto Sans DemLight';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/notoSans/eot/NotoSansKR-DemiLight-Hestia.eot);
+  src: url(./font/notoSans/eot/NotoSansKR-DemiLight-Hestia.eot?#iefix) format("embedded-opentype"), url(./font/notoSans/woff/NotoSansKR-DemiLight-Hestia.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/notoSans/eot/NotoSansKR-Regular-Hestia.eot);
+  src: url(./font/notoSans/eot/NotoSansKR-Regular-Hestia.eot?#iefix) format("embedded-opentype"), url(./font/notoSans/woff/NotoSansKR-Regular-Hestia.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Noto Sans Medium';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/notoSans/eot/NotoSansKR-Medium-Hestia.eot);
+  src: url(./font/notoSans/eot/NotoSansKR-Medium-Hestia.eot?#iefix) format("embedded-opentype"), url(./font/notoSans/woff/NotoSansKR-Medium-Hestia.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'NanumSquare R';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/nanumSquare/NanumSquareR.eot);
+  src: url(./font/nanumSquare/NanumSquareR.eot?#iefix) format("embedded-opentype"), url(./font/nanumSquare/NanumSquareR.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'NanumSquare B';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/nanumSquare/NanumSquareB.eot);
+  src: url(./font/nanumSquare/NanumSquareB.eot?#iefix) format("embedded-opentype"), url(./font/nanumSquare/NanumSquareB.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'NanumSquare EB';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./font/nanumSquare/NanumSquareEB.eot);
+  src: url(./font/nanumSquare/NanumSquareEB.eot?#iefix) format("embedded-opentype"), url(./font/nanumSquare/NanumSquareEB.woff) format("woff");
+}
+
+/* reset */
+html, body, div, span, object,h1, h2, h3, h4, h5, h6, p, blockquote, a, button, abbr, address, img, q,dl, dt, dd, ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,article, aside, footer, header, section, summary{margin:0;padding:0;border:0;font:inherit;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}/* HTML5 display-role reset for older browsers */
+body,html{width: 100%;height: 100%; margin: 0; padding: 0;}ol, ul{list-style: none;}
+table{border-collapse: collapse;border-spacing: 0;}
+img{border: none;}
+a{text-decoration: none;color: inherit;}
+address{font-style: normal;}
+button{display: inline-block;border: none;background-color: transparent;cursor: pointer;}
+input,button,a,select,option{font-family:inherit;font-size:inherit;}
+input[type="checkbox"]{border: none !important;}/* for lte IE10 */
+input[type="radio"]{border: none !important;}/* for lte IE10 */
+input[type="text"]::-ms-clear {display:none;}
+button:focus{outline:none;}
+caption,hr{display:none;}
+pre{word-break:break-all;white-space:pre-line;}
+li{list-style: none;}
+select::-ms-expand {display:none;} /* IE */
+
+/* common */
+body,html{font-family:'Noto Sans DemLight', "맑은 고딕", "Malgun Gothic", Dotum, sans-serif;font-size:13px;color: #333;letter-spacing:-0.045em !important;}
+.clearFix:after{content: "";display: block;clear: both;}
+.hidden{display:block;margin: 0;padding: 0;width: 0;height: 0;overflow: hidden;font-size: 0;line-height: 0;visibility: hidden;}
+.txt-center{text-align:center;}
+.pos-r{position:relative;}
+.va-t{vertical-align: top;}
+
+/* Accessibility Navigation */
+.accNav {position:absolute; top:0; left:0; z-index:500; width:100%; height:0;}
+.accNav a {display:block; position:absolute; left:0; top:0; overflow:hidden; width:1px; height:1px; margin-left:-1px; margin-bottom:-1px; text-align:center; color:#fff; white-space:nowrap; font-size:0.75em;}
+.accNav a:focus,
+.accNav a:hover,
+.accNav a:active {z-index:1000; width:100%; height:auto; padding:5px 0; background:#ffc000; color:#4A2713; font-weight:700;}
+
+#container{width: 100%; min-width: 1400px;}
+#contentWrap{
+  display: flex; width: calc(100% - 50px);height: calc(100% - 90px); padding: 90px 0 0;
+  flex-direction: row;justify-content: flex-start;
+}
+#content{width: calc(100% - 300px); background: #fff; padding: 60px 0 100px 0;
+  .inner {
+    &.type02 {position: relative; padding: 0px 100px 0px 80px;}
+  }
+}
+
+/* header */
+#header{
+  height:90px; /*max-width: 1920px;*/ max-width: 1820px; min-width: 1280px;margin: 0 50px;
+  display: flex; display: -ms-flexbox; align-items: center; -ms-flex-align: center;
+  .inner{position: relative;display: flex;height: 100%; padding: 0 100px 0 90px;box-sizing: border-box;justify-content: space-between;align-items: center;}
+
+}
+
+/* lnb */
+#lnb{
+  width: 322px;min-height: 944px;padding: 40px;box-sizing: border-box; background-color: #303b6d;
+  .menuName{
+    .tit{position: relative; margin-top: 48px;margin-bottom: 45px; font-size: 38px;font-family: "NanumSquare B";color: #fff;line-height: 1.21;letter-spacing: -1.9px;
+      &:before{content: '';position: absolute;top: -47px;left: 0; display: block;width: 140px;height: 60px;background: url("../images/common/lnb-logo.png") no-repeat;}
+    }
+  }
+  .dep1{
+    width: 220px;
+    &>li{position: relative;
+      &>p{position: relative; padding-left: 50px; height: 50px;font-family: "Noto Sans"; color: #fff; font-size: 14px;line-height: 50px; letter-spacing: -0.7px;
+        border: solid 1px rgba(255,255,255,0.62);background: rgba(255, 255, 255, 0.2) url("../images/ico/ico-lnb.png");background-position: left 17px center;background-repeat: no-repeat;
+        &:before{content: '';display: block;position: absolute;right: 10px;top: 14px; width: 24px;height: 20px;
+          background: url("../images/ico/lnb-arrow-down.svg") no-repeat;}
+      }
+      &:last-child>.dep2{border-bottom: solid 1px rgba(255,255,255,0.4);}
+      &>.dep2{
+        display: none; padding: 10px 0; border-left: solid 1px rgba(255,255,255,0.4);border-right: solid 1px rgba(255,255,255,0.4);
+        li{position: relative;padding-left: 40px; font-family: "Noto Sans"; color: rgba($color: #c4d2ff, $alpha: 0.5);line-height: 16px;letter-spacing: -0.7px;
+          &:before {content: ''; opacity: 0; position: absolute; top: 7px; left: 0;width: 34px; height: 1px; background: rgba(255,255,255,0.5); transition: 0.5s;}
+          +li{margin-top: 5px;}
+          &:hover{color: #fff;opacity: 1;}
+          &.active{color: #fff;opacity: 1;
+            &:before {opacity: 1;}
+          }
+          a {display: inline-block;}
+        }
+      }
+      // .line{display: none; position: absolute;top: 69px; width: 34px;height: 1px;background: rgba(255,255,255,0.5);transition: 0.2s;}
+      &.active{
+        &>p{background-image: url("../images/ico/ico-lnb-active.png");background-color: #fff; color: #11698e;font-weight: bold;
+          &:before{background: url("../images/ico/ico-arrow-up-active.png") no-repeat;}
+        }
+        // .line{display: block;}
+      }
+    }
+  }
+}
+
+
+
+/* footer */
+#footer{
+  position: relative;
+  min-width:1400px;
+  height: 170px;background: #414141;
+  .inner{position: relative;width: 1400px;margin: 0 auto;
+    .top{display: flex;width: 100%;height: 79px;justify-content: space-between;align-items: center;border-bottom: 1px solid rgba(255,255,255, 0.15);}
+  }
+  .bottom{display: flex;width: 100%;height: 90px; justify-content: space-between;align-items: center;}
+  .footMenu{display: flex;justify-content: flex-start;
+    li{font-family: "Noto Sans Light"; font-size: 14px;color: #fff;opacity: 0.3;line-height: 1;transition: 0.1s;
+      &:first-child:before{display: none;}
+      &:before{content: '';display: inline-block; width: 1px;height: 18px;margin: 0 40px; background: #fff;opacity: 0.4;vertical-align: middle;}
+      &:hover{opacity: 0.6;}
+    }
+  }
+  .footSelect{
+    select{width: 140px;height: 36px;padding-left: 14px; border: solid 1px rgb(95,95,95);background-color: #000;
+      background-image: url("../images/ico/ico-footer-select.png");background-position: right 14px center; background-repeat: no-repeat; appearance: none;
+      font-size: 12px;color: RGB(190,190,190);
+      +select{margin-left: 20px;}
+    }
+  }
+  .footInfo{
+    p{display: inline-block;font-family: "Noto Sans Light"; font-size: 12px;color: rgba(255,255,255, 0.5);line-height: 2;
+      +p{margin-left: 20px;}
+    }
+  }
+}
+
+@import 'newCommon';
+@import 'popup';

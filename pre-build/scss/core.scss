@@ -1,0 +1,209 @@
+@charset "utf-8";
+@import url('midea-q.css');
+/* core.css 사이트 전체 공통 디자인*/
+
+
+
+// @font-face{
+// 	font-family: NG;/*내가지은이름*/
+// 	src: url(../fonts/NanumGothic.eot) format("eot"),
+// 		url(../fonts/NanumGothic.woff) format("woff"),
+// 		url(../fonts/NanumGothic.woff) format("woff2"),
+// 		url(../fonts/NanumGothic.ttf) format("ttf");	
+// }
+// @font-face{
+// 	font-family: NGL;/*내가지은이름*/
+// 	src: url(../fonts/NanumGothicLight.eot) format("eot"),
+// 		url(../fonts/NanumGothicLight.woff) format("woff"),
+// 		url(../fonts/NanumGothicLight.woff) format("woff2"),
+// 		url(../fonts/NanumGothicLight.ttf) format("ttf");	
+// }
+// @font-face{
+// 	font-family: NGB;/*내가지은이름*/
+// 	src: url(../fonts/NanumGothicBold.eot) format("eot"),
+// 		url(../fonts/NanumGothicBold.woff) format("woff"),
+// 		url(../fonts/NanumGothicBold.woff2) format("woff2"),
+// 		url(../fonts/NanumGothicBold.ttf) format("ttf");	
+// }
+// @font-face{
+// 	font-family: NGEB;/*내가지은이름*/
+// 	src: url(../fonts/NanumGothicExtraBold.eot) format("eot"),
+// 		url(../fonts/NanumGothicExtraBold.woff) format("woff"),
+// 		url(../fonts/NanumGothicExtraBold.woff2) format("woff2"),
+// 		url(../fonts/NanumGothicExtraBold.ttf) format("ttf");	
+// }
+// @font-face{
+// 	font-family: Nsq;/*내가지은이름*/
+// 	src: url(../fonts/NanumSquareR.eot) format("eot"),
+// 		url(../fonts/NanumSquareR.woff) format("woff"),
+// 		url(../fonts/NanumSquareR.woff) format("woff2"),
+// 		url(../fonts/NanumSquareR.ttf) format("ttf");	
+// }
+// @font-face{
+// 	font-family: Nsql;/*내가지은이름*/
+// 	src: url(../fonts/NanumSquareL.eot) format("eot"),
+// 		url(../fonts/NanumSquareL.woff) format("woff"),
+// 		url(../fonts/NanumSquareL.woff) format("woff2"),
+// 		url(../fonts/NanumSquareL.ttf) format("ttf");	
+// }
+// @font-face{
+// 	font-family: Nsqb;/*내가지은이름*/
+// 	src: url(../fonts/NanumSquareB.eot) format("eot"),
+// 		url(../fonts/NanumSquareB.woff) format("woff"),
+// 		url(../fonts/NanumSquareB.woff2) format("woff2"),
+// 		url(../fonts/NanumSquareB.ttf) format("ttf");	
+// }
+// @font-face{
+// 	font-family: Nsqeb;/*내가지은이름*/
+// 	src: url(../fonts/NanumSquareEB.eot) format("eot"),
+// 		url(../fonts/NanumSquareEB.woff) format("woff"),
+// 		url(../fonts/NanumSquareEB.woff2) format("woff2"),
+// 		url(../fonts/NanumSquareEB.ttf) format("ttf");	
+// }
+
+@font-face {
+    font-family: 'Noto Sans Light';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./font/notoSans/eot/NotoSansKR-Light-Hestia.eot);
+    src: url(./font/notoSans/eot/NotoSansKR-Light-Hestia.eot?#iefix) format("embedded-opentype"), url(./font/notoSans/woff/NotoSansKR-Light-Hestia.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: 'Noto Sans DemLight';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./font/notoSans/eot/NotoSansKR-DemiLight-Hestia.eot);
+    src: url(./font/notoSans/eot/NotoSansKR-DemiLight-Hestia.eot?#iefix) format("embedded-opentype"), url(./font/notoSans/woff/NotoSansKR-DemiLight-Hestia.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./font/notoSans/eot/NotoSansKR-Regular-Hestia.eot);
+    src: url(./font/notoSans/eot/NotoSansKR-Regular-Hestia.eot?#iefix) format("embedded-opentype"), url(./font/notoSans/woff/NotoSansKR-Regular-Hestia.woff) format("woff");
+  }
+  
+  @font-face {
+    font-family: 'Noto Sans Medium';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./font/notoSans/eot/NotoSansKR-Medium-Hestia.eot);
+    src: url(./font/notoSans/eot/NotoSansKR-Medium-Hestia.eot?#iefix) format("embedded-opentype"), url(./font/notoSans/woff/NotoSansKR-Medium-Hestia.woff) format("woff");
+  }
+
+
+html,body{
+	margin: 0px;
+	padding: 0px;
+	letter-spacing: -0.045em;
+}
+/* body{overflow-x: hidden;가로 스크롤 안생기게함} */
+ul, ol{/*3무*/
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+/*.clb는 공통 float해제용 class임*/
+ul::after, ol::after, .clb::after{/*float해제*/
+	content: "";
+	display: block;
+	clear: both;
+}
+li,dl{
+	float: left;/*옆으로 흐르게*/
+}
+
+a{
+	color: #333;
+	letter-spacing: -1px;/*글자간격*/
+	text-decoration: none;/*밑줄없앰*/
+}
+
+img{
+	border: none;/*이미지 링크시 테두리 없앰*/
+	vertical-align: bottom;/*이미지를 박스에 넣었을때 하단 간극이 생기는 현상을 해결함!!*/
+/*	diaplay:block; 하단간극없앰(택일)*/
+}
+/*글자셋팅*/
+body, button, h1, h2,h3,h4,h5,h6, input, select, table, textarea{
+	font-family: 'NG','NGB','NGL';
+	font-size: 12px;
+	line-height: 1.4rem;
+    word-spacing: -0.01rem;/* 단어 간격*/
+}
+
+
+/*태그 초기화 설정*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,abbr,address,cite,code,del,dfn,em,img,
+ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,
+menu,nav,section,summary,time,mark,audio,video,button{margin:0; padding:0;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {  display: block; }
+address{font-style: normal;}
+
+
+body, div, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, a, button, select, ul, li, span, em 
+{
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+    box-sizing: border-box;
+}
+.bld{display: none;}
+
+.customGrid{padding: 0!important;margin: 0!important;}
+
+input[type="text"] {
+	display: inline-block;
+	/* width: 100%; */
+	/* height: 35px; */
+	border: 1px solid #d3d4d5;
+	box-sizing: border-box;
+	/* text-indent: 7px; */
+}
+input[type="text"]::placeholder {
+	color: #bbbbbb;
+	text-indent: 7px;
+}
+input[type="file"].file {
+	margin: 0;
+	padding: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+input[type="file"].file + label {
+	display: inline-block;
+	height: 32px;
+	padding: 0 9px 0 29px;
+	margin-left: 5px;
+	line-height: 31px;
+	border: 1px solid #d3d4d5;
+	color: #686868;
+	box-sizing: border-box;
+	vertical-align: top;
+	background: #000;
+}
+
+input[type="file"].file + label:hover {
+	background: green;
+	color: #2057a8;
+	border: 1px solid #2b6fd5;
+}
+
+textarea {
+	display: inline-block;
+	width: 100%;
+	height: 82px;
+	border: 1px solid #d3d4d5;
+	box-sizing: border-box;
+}
+.hidden{position: absolute;width: 1px;height: 1px;margin: -1px;padding: 0;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;}

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+    <head>
+        
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<script type="text/javascript" src="../../lib/jquery-1.12.4.js"></script>
+	<!-- <script src="../lib/realgrid.2.4.1/realgrid-lic.js"></script>
+	<script src="../lib/realgrid.2.4.1/realgrid.2.4.1.min.js"></script> -->
+	<script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../lib/ztree/jquery.ztree.all.js"></script>
+	<!-- <script type="text/javascript" src="../js/grid.js"></script> -->
+	<script type="text/javascript" src="../../js/ui.js"></script>
+	<!-- <script src="../js/grid.js"></script> -->
+	<link rel="stylesheet" href="../../lib/jquery-ui.css">
+	<link rel="stylesheet" href='../../css/common.css'>
+	<link rel="stylesheet" href='../../css/main.css'>
+	<link rel="stylesheet" href='../../css/core.css'>
+	<link rel="stylesheet" href='../../css/midea-q.css'>
+	<link rel="stylesheet" href='../../css/newCommon.css'>
+	<link rel="stylesheet" href='../../css/popup.css'>
+	<!-- <link href="../lib/realgrid.2.4.1/realgrid-style.css" rel="stylesheet" />
+	<style>
+        #realgrid {
+            width: 100%;
+            min-height: 200px;
+        }
+    </style> -->
+	<title>지적측량업무지원시스템</title>
+	</head>
+<body>
+    <header class="header-box clb sub">
+    <div class="left-box">
+        <a href="#">
+            <img src="../../images/common/logo_b.png" alt="LX 지적측량업무지원시스템">
+        </a>
+    </div>
+    <div class="right-box">
+        <div class="loginInfo">
+            <!--top-->
+            <div class="top">
+                <div class="infoArea">
+                    <p class="userName"><span>홍길동</span>님</p>
+                    <p class="userInfo">본부장</p>
+                </div>
+                <div class="accessInfo">
+                    <span class="access">마지막 접속</span>
+                    <span>17 : 11 : 39</span>
+                    <span>(10.10.43.69)</span>
+                </div>
+            </div>
+            <!--//top-->
+            <!--bottom-->
+            <div class="bottom">
+                <div class="timeArea">
+                    <span>00:58:47</span>
+                    <button type="button">연장하기</button>
+                </div>
+                <button type="button" class="btnAuthority"><span>권한변경</span></button>
+                <button type="button" class="btnLogout gray"><span>로그아웃</span></button>
+            </div>
+            <!--//bottom-->
+        </div>
+        <!-- <span>
+            <span class="company">본사</span>
+            <div class="m-box"></div>
+            <span class="manager">관리자</span>님
+            <button class="btn log-out" onclick="logout();" style="cursor: pointer;">로그아웃</button>
+        </span>
+        <span>
+            <span>접속 정보 :</span>
+            <span>2021년11월04일</span>
+            <span>11시10분17초</span>
+            <span>(10.10.43.69)</span>
+        </span>
+        <span>
+            <span id ="timer"></span>
+            <span>뒤에 자동으로 로그아웃 합니다.</span>
+        </span>
+        <button class="btn log-out" onclick="fninitTime();" style="cursor: pointer;">로그인 연장</button> -->
+    </div>
+</header>
+
+    <div class="gnb sub">
+        <div class="menuBg"></div>
+        <div class="navigation-now">
+            <span>일정</span>
+            <span>측량일정관리</span>
+        </div>
+        <ul class="menu">
+            <li>
+            <a href="#" onclick="return false;">사업관리</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측향이력조회</a></li>
+                </ul>
+            </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">접수</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                </ul>
+            </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">일정</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                </ul>
+            </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">공정관리</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측량이력조회</a></li>
+                    <li><a href="#">인지세대장</a></li>
+                    <li><a href="#">일반접수처리</a></li>
+                </ul>
+            </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">정산</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                </ul>
+                </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">성과</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측량이력조회</a></li>
+                    <li><a href="#">인지세대장</a></li>
+                    <li><a href="#">일반접수처리</a></li>
+                </ul>
+            </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">결산</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="#">특수접수목록과거<br>이력조회</a></li>
+                    <li><a href="#">일반접수목록</a></li>
+                </ul>
+            </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">계산서</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                </ul>
+            </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">목표량</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                </ul>
+                </div>
+            </li>
+            <li>
+            <a href="/" onclick="return false;">통계</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측량이력조회</a></li>
+                    <li><a href="#">인지세대장</a></li>
+                    <li><a href="#">일반접수처리</a></li>
+                    <li><a href="#">특수접수처리</a></li>
+                    <li><a href="#">일반접수목록</a></li>
+                    <li><a href="#">특수접수목록</a></li>
+                </ul>
+            </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

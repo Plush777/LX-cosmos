@@ -1,0 +1,2227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<script type="text/javascript" src="../../lib/jquery-1.12.4.js"></script>
+	<!-- <script src="../lib/realgrid.2.4.1/realgrid-lic.js"></script>
+	<script src="../lib/realgrid.2.4.1/realgrid.2.4.1.min.js"></script> -->
+	<script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../lib/ztree/jquery.ztree.all.js"></script>
+	<!-- <script type="text/javascript" src="../js/grid.js"></script> -->
+	<script type="text/javascript" src="../../js/ui.js"></script>
+	<!-- <script src="../js/grid.js"></script> -->
+	<link rel="stylesheet" href="../../lib/jquery-ui.css">
+	<link rel="stylesheet" href='../../css/common.css'>
+	<link rel="stylesheet" href='../../css/main.css'>
+	<link rel="stylesheet" href='../../css/core.css'>
+	<link rel="stylesheet" href='../../css/midea-q.css'>
+	<link rel="stylesheet" href='../../css/newCommon.css'>
+	<link rel="stylesheet" href='../../css/popup.css'>
+	<!-- <link href="../lib/realgrid.2.4.1/realgrid-style.css" rel="stylesheet" />
+	<style>
+        #realgrid {
+            width: 100%;
+            min-height: 200px;
+        }
+    </style> -->
+	<title>지적측량업무지원시스템</title>
+</head>
+<body>
+	<!-- <script type="text/javascript">
+	var initContdown = 60*60*2; // 1시간
+	var endTime;
+	window.onload = function()
+	{
+	countdown("timer", initContdown);
+	}
+
+	function fninitTime()
+	{
+		endTime = (+new Date) + 1000 * initContdown; //60초
+		//console.log("시간연장");
+	}
+
+		function logout() {
+			location.href = '/login/actionLogout.do';
+		}
+
+	
+		function fn_btn_infoSearch(){
+			url = "http://knowledge.lx.or.kr/ckms/?clcd=17&empuno=000000&deptCode=100000";
+			openWindow(url, "상담지식관리", 1280, 1024);
+		}
+
+		/**
+		 * 새로운 창을 오픈합니다.
+		 *
+		 * @param	url			url
+		 * @param	winName	화면명
+		 * @param	width		화면 넓이
+		 * @param	height		화면 높이
+		 * @return		없음
+		 */
+		function openWindow(url, winName, width, height){
+			var w = width == 0 || width == undefined ? document.body.clientWidth - 10 : width;
+			var h = width == 0 || width == undefined ? document.body.clientHeight - 30 : height;
+			var option = 'toolbar=no,menubar=no,top=0,left=0,width=' + w + ',height=' + h + ',location=no,directions=no,scrollbars=no,resizable=yes,status=no';
+
+			var newWin = window.open(url, winName, option);
+			newWin.focus();
+		}
+
+
+		/* Timer */
+		function countdown( elementId, seconds){
+		  var element, hours, mins, msLeft, time;
+
+		  function updateTimer(){
+			msLeft = endTime - (+new Date);
+			//console.log( '---msLeft--1--:' + msLeft );
+			if ( msLeft < 0 ) {
+			 // console.log('time out');
+			  alert("로그아웃되었습니다.");
+			  logout();
+
+			}else{
+			  time = new Date( msLeft );
+			  hours = time.getUTCHours();
+			  mins = time.getUTCMinutes();
+			  element.innerHTML = (hours ? hours + '시 ' + ('0' + mins).slice(-2) : mins) + '분 ' + ('0' + time.getUTCSeconds()).slice(-2)+'초';
+			  setTimeout( updateTimer, 1000); //time.getUTCMilliseconds()
+			  }
+		  }
+
+		  element = document.getElementById( elementId );
+		  endTime = (+new Date) + 1000 * seconds;
+		  updateTimer();
+		}
+
+	</script> -->
+	<!--header-->
+	<header class="header-box clb sub">
+    <div class="left-box">
+        <a href="#">
+            <img src="../../../images/common/logo_b.png" alt="LX 지적측량업무지원시스템">
+        </a>
+    </div>
+    <div class="right-box">
+        <div class="loginInfo">
+            <!--top-->
+            <div class="top">
+                <div class="infoArea">
+                    <p class="userName"><span>홍길동</span>님</p>
+                    <p class="userInfo">본부장</p>
+                </div>
+                <div class="accessInfo">
+                    <span class="access">마지막 접속</span>
+                    <span>17 : 11 : 39</span>
+                    <span>(10.10.43.69)</span>
+                </div>
+            </div>
+            <!--//top-->
+            <!--bottom-->
+            <div class="bottom">
+                <div class="timeArea">
+                    <span>00:58:47</span>
+                    <button type="button">연장하기</button>
+                </div>
+                <button type="button" class="btnAuthority"><span>권한변경</span></button>
+                <button type="button" class="btnLogout gray"><span>로그아웃</span></button>
+            </div>
+            <!--//bottom-->
+        </div>
+        <!-- <span>
+            <span class="company">본사</span>
+            <div class="m-box"></div>
+            <span class="manager">관리자</span>님
+            <button class="btn log-out" onclick="logout();" style="cursor: pointer;">로그아웃</button>
+        </span>
+        <span>
+            <span>접속 정보 :</span>
+            <span>2021년11월04일</span>
+            <span>11시10분17초</span>
+            <span>(10.10.43.69)</span>
+        </span>
+        <span>
+            <span id ="timer"></span>
+            <span>뒤에 자동으로 로그아웃 합니다.</span>
+        </span>
+        <button class="btn log-out" onclick="fninitTime();" style="cursor: pointer;">로그인 연장</button> -->
+    </div>
+</header>
+
+	<!--//header-->
+	<!--nav-->
+	<!-- <nav class="clb sub">
+		<div>
+			<div class="left-box clb">
+				<div class="navigation-now">
+					<span>지적재조사</span>
+					<span>대행자수수료지급</span>
+				</div>
+				<ul class="common-nav-box">
+					<li>
+					<a href="#" onclick="return false;">접수</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/cr/cr10/list.do">일반접수처리</a>
+					</li>
+					<li>
+					<a href="/cr/cr20/list.do">특수접수처리</a>
+					</li>
+					<li>
+					<a href="/cr/cr30/list.do">일반접수목록</a>
+					</li>
+					<li>
+					<a href="/cr/cr40/list.do">특수접수목록</a>
+					</li>
+					<li>
+					<a href="/cr/cr50/list.do">선수금</a>
+					</li>
+					<li>
+					<a href="/cr/cr60/list.do">업무이관</a>
+					</li>
+					<li>
+					<a href="/cr/cr90/list.do">인지세대장</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">일정</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/sc/sc10/list.do">측량일정관리</a>
+					</li>
+					<li>
+					<a href="/sc/sc20/list.do">예약불가측량팀관리</a>
+					</li>
+					<li>
+					<a href="/sc/sc30/list.do">집행지시관리</a>
+					</li>
+					<li>
+					<a href="/sc/sc40/list.do">출장관리</a>
+					</li>
+					<li>
+					<a href="/sc/sc50/list.do">미결업무조회</a>
+					</li>
+					<li>
+					<a href="/sc/sc60/list.do">측량수행계획서</a>
+					</li>
+					<li>
+					<a href="/sc/sc70/list.do">랜디-i 신청일정관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">정산</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/ec/ec10/list2.do">정산</a>
+					</li>
+					<li>
+					<a href="/ec/ec20/list.do">청구통합관리</a>
+					</li>
+					<li>
+					<a href="/ec/ec30/list.do">수입통합관리</a>
+					</li>
+					<li>
+					<a href="/ec/ec41/list.do">미반환금대장</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">카드</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="#" onclick="return false;">카드승인/청구</a>
+					</li>
+					<li>
+					<a href="/ec/ec52/list.do">카드결제내역</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">미수수수료</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ec/ec61/list.do">미수수수료대장</a>
+					</li>
+					<li>
+					<a href="/ec/ec62/list.do">미수수수료상세</a>
+					</li>
+					<li>
+					<a href="/ec/ec63/list.do">미수수수료수입관리대장</a>
+					</li>
+					<li>
+					<a href="/ec/ec71/list.do">종목별수입현황</a>
+					</li>
+					<li>
+					<a href="/ec/ec72/list.do">기관별현황</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">현황</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ec/ec75/list.do">기관별수입현황</a>
+					</li>
+					<li>
+					<a href="/ec/ec73/list.do">종목별반환현황</a>
+					</li>
+					<li>
+					<a href="/ec/ec74/list.do">기관별반환내역</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/ec/ec80/list.do">수수료이기관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">성과</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/sg/sg10/list.do">검사요청</a>
+					</li>
+					<li>
+					<a href="/sg/sg20/list.do">성과도수령</a>
+					</li>
+					<li>
+					<a href="/sg/sg30/list.do">성과도교부</a>
+					</li>
+					<li>
+					<a href="/sg/sg40/list.do">성과도교부목록</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">결산</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/sa/sa10m/list.do">수입및반환</a>
+					</li>
+					<li>
+					<a href="/sa/sa20m/list.do">일계표처리</a>
+					</li>
+					<li>
+					<a href="/sa/sa30m/list.do">일일업무처리</a>
+					</li>
+					<li>
+					<a href="/sa/sa40m/list.do">일일업무정산</a>
+					</li>
+					<li>
+					<a href="/sa/sa50m/list.do">자금송금결의서</a>
+					</li>
+					<li>
+					<a href="/sa/sa80m/list.do">일별집계현황</a>
+					</li>
+					<li>
+					<a href="/sa/sa60m/list.do">월결산</a>
+					</li>
+					<li>
+					<a href="/sa/sa70m/list.do">연이월</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">계산서</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a href="/fe/fe20/list.do">현금영수증발행</a>
+					</li>
+					<li>
+					<a href="/fe/fe30/list.do">세금계산서발행</a>
+					</li>
+					<li>
+					<a href="/fe/fe40/list.do">현금영수증대장</a>
+					</li>
+					<li>
+					<a href="/fe/fe50/list.do">세금계산서대장</a>
+					</li>
+					<li>
+					<a href="/fe/fe60/list.do">부가세처리대장</a>
+					</li>
+					<li>
+					<a href="/fe/fe70/list.do">전자세금계산서대장</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">부가세현황</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/fe/fe80/list.do">완료대비부가세</a>
+					</li>
+					<li>
+					<a href="/fe/fe90/list.do">부가세전송현황</a>
+					</li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">통계</a>
+					<ul class="common-nav-depth">
+					<li class="has-depth">
+					<a href="#" onclick="return false;">실적통계</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss20/selectStatisticsList.do">접수통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss30/selectActualResult.do">실적통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss133/ss133.do">유관기관별실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss160/list.do">개방업무추진실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss180/ss180.do">업무처리실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss140/getSs140mView.do">특수업무현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss100/getSs100mView.do">업무처리부</a>
+					</li>
+					<li>
+					<a href="/ss/ss230/selectKcscistJob.do">지사별업무추진현황</a>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">소면적통계</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">팀장실적관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss114/list.do">팀장출장실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss111/getSs111mView.do">팀장별업무종목실적현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss112/list.do">팀장별미결업무현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss113/getSs113mView.do">근평실적</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">수수료경감</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss131/getSs131mView.do">수수료경감실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss132/getSs132mView.do">수수료경감업무</a>
+					</li>
+					<li>
+					<a href="/ss/ss134/getSs134mView.do">지역별수수료경감실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss420/ss420.do">수수료감면미적용상세</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">신규사업</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss121/getSS121mView.do">신규사업관리</a>
+					</li>
+					<li>
+					<a href="/ss/ss120/getSS120mView.do">신규사업통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss200/list.do">국토정보조사관리</a>
+					</li>
+					<li>
+					<a href="/ss/ss123/list.do">유형별월별목표량</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">만족도</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss150/ss150.do">고객만족도</a>
+					</li>
+					<li>
+					<a href="/ss/ss151/ss151.do">고객만족도통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss152/list.do">성과검사만족도</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">분석및보고</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss400/ss400.do">주간(측량)팀수 등록</a>
+					</li>
+					<li>
+					<a href="/ss/ss220/selectRiskManage.do">엄무현황분석지도</a>
+					</li>
+					<li>
+					<a href="/ss/ss190/getSs190mView.do">연도별통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss90/getSs90mView.do">처리기간조사표</a>
+					</li>
+					<li>
+					<a href="/ss/ss280/getSs280mView.do">일일업무실적분석표</a>
+					</li>
+					<li>
+					<a href="/ss/ss260/list.do">공휴예약제및휴일근무현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss270/selectCategoryProcessList.do">종목별처리기간 통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss250/list.do">장기미결업무현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss290/selectBusinessTripList.do">전일출장업무</a>
+					</li>
+					<li>
+					<a href="/ss/ss300/getSS300mView.do">연기건수</a>
+					</li>
+					<li>
+					<a href="/ss/ss310/list.do">일간보고</a>
+					</li>
+					<li>
+					<a href="/ss/ss340/ss340.do">지적측량업무처리실적</a>
+					</li>
+					<li>
+					<a href="/ss/ss350/list.do">채권확보 관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">접수목록조회</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/sscr30/getSscr30mView.do">일반접수목록조회</a>
+					</li>
+					<li>
+					<a href="/ss/sscr30/getSscr40mView.do">특수접수목록조회</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/ss/ss410/list.do">측량업무처리기간 현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss710/selectSurvrect.do">정산이력통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss800/realTimeChgJgrcSelect.do">실시간업무이관현황</a>
+					</li>
+					<li>
+					<a href="/ss/ss900/list.do">아차사고 등록현황</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">목표량</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">기본자료생성관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">완료예상분석관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">완료예상량등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">완료예상량분석</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">특수업무조서관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">수량분석등록관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">업무량등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">업무량분석관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">단가산출금액관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">단가계수결정등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">목표금액분석관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">연간목표확정관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">연간목표확정관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">증감사유등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">적용율등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">감소예상등록</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">인력산출</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">월별목표등록관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">월별목표관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">월별목표현황</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">통계자료분석관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">기관별목표량책정현황</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">확정측량업무관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">유관기관업무관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">수치지적측량분석</a>
+					</li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">기준정보관리</a>
+					<ul class="common-nav-depth">
+					<li class="has-depth">
+					<a href="#" onclick="return false;">사용자관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm109/selectUserManagerList.do">사용자권한관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm109/selectUserAuthList.do">사용자권한신청</a>
+					</li>
+					<li>
+					<a href="/sm/sm108/selectClientList.do">의뢰인관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">수수료관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm80/select81List.do">기본자료생성</a>
+					</li>
+					<li>
+					<a href="/sm/sm80/select82List.do">기본공수관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm80/sm83List.do">적용구분관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm80/sm84List.do">체감계수관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm8b/list.do">기계경비산출</a>
+					</li>
+					<li>
+					<a href="/sm/sm8c/list.do">재료소모품비산출</a>
+					</li>
+					<li>
+					<a href="/sm/sm85/list.do">직간접비등록</a>
+					</li>
+					<li>
+					<a href="/sm/sm86/list.do">면적단가산출</a>
+					</li>
+					<li>
+					<a href="/sm/sm88/list.do">수수료표조회</a>
+					</li>
+					<li>
+					<a href="/sm/sm89/list.do">기본단가대비</a>
+					</li>
+					<li>
+					<a href="/sm/sm80/list.do">업무종목별단가산출</a>
+					</li>
+					<li>
+					<a href="/sm/sm8a/list.do">업무종목관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm8e/list.do">수수료이관관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/sm/sm101/selectSurveyTeamList.do">측량팀관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">기관관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm102/selectInsttHistMgtList.do">기관이력관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm106/list.do">소관청이력관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm103/list.do">소재지관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/sm/sm105/list.do">경감및무료봉사</a>
+					</li>
+					<li>
+					<a href="/sm/sm104/list.do">소관청별수입계좌관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">전송관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm33/list.do">SMS전송</a>
+					</li>
+					<li>
+					<a href="/sm/sm34/list.do">Email전송</a>
+					</li>
+					<li>
+					<a href="/sm/sm35/list.do">SMS전송이력</a>
+					</li>
+					<li>
+					<a href="/sm/sm36/list.do">Email전송이력</a>
+					</li>
+					<li>
+					<a href="/ss/ss330/list.do">SMS전송이력(일정)</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">지적정보관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm61/list.do">소관청별 조례 관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">지적법 및 규정관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">검사정보관리</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">측량목적관리</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">기관통폐합</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm110/list.do">지사분리관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm111/list.do">토지소재지분리</a>
+					</li>
+					<li>
+					<a href="/sm/sm112/list.do">대상등록</a>
+					</li>
+					<li>
+					<a href="/sm/sm113/list.do">승인처리</a>
+					</li>
+					<li>
+					<a href="/sm/sm114/list.do">지사마감</a>
+					</li>
+					<li>
+					<a href="/sm/sm115/list.do">본부마감</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">본부통폐합</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ma/ma10/list.do">기관이력관리</a>
+					</li>
+					<li>
+					<a href="/ma/ma20/list.do">기관분리관리</a>
+					</li>
+					<li>
+					<a href="/ma/ma30/list.do">토지소재지분리</a>
+					</li>
+					<li>
+					<a href="/ma/ma40/list.do">대상등록</a>
+					</li>
+					<li>
+					<a href="/ma/ma50/list.do">승인처리</a>
+					</li>
+					<li>
+					<a href="/ma/ma60/list.do">마감관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="/sm/sm140/selectPortalMgtList.do">포털권한관리</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">시스템관리</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">메뉴및권한관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">게시판관리</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/sm/sm70/selectNoticeList.do">공지사항관리</a>
+					</li>
+					<li>
+					<a href="/sm/sm70/selectQnaList.do">질문및답변</a>
+					</li>
+					</ul>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">상담</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">상담</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">상담분배</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">녹취승인</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">상담원모니터링</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">스테이션관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">신규통계</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">접수통계</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">콜통계</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">상담통계</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">실적통계</a>
+					</li>
+					</ul>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">콜센터게시판</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">콜센터게시판</a>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">콜센터게시판접수목록</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">전년도 일별 근무현황</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a href="#" onclick="return false;">지적재조사</a>
+					<ul class="common-nav-depth">
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">지적재조사 사업관리</a>
+					</li>
+					<li class="has-depth">
+					<a href="#" onclick="return false;">지적재조사통계</a>
+					<ul class="common-nav-depth-depth">
+					<li>
+					<a href="/ss/ss210/ss210.do">지적재조사통계</a>
+					</li>
+					<li>
+					<a href="/ss/ss211/ss211.do">협력수행자추진실적</a>
+					</li>
+					</ul>
+					</li>
+					<li>
+					<a style="color: gray" href="#" onclick="return false;">재조사공정관리</a>
+					</li>
+					</ul>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav> -->
+	<!--//nav-->
+	<!--gnb-->
+	<div class="gnb sub">
+        <div class="menuBg"></div>
+		<div class="navigation-now">
+			<span>지적재조사</span>
+			<span>대행자수수료지급</span>
+		</div>
+        <ul class="menu">
+          <li>
+            <a href="#" onclick="return false;">사업관리</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측향이력조회</a></li>
+                </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">접수</a>
+            <div class="dep2">
+              <ul>
+                  <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                  <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                  <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                  <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                  <li><a href="/cr/cr50/list.do">선수금</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">일정</a>
+            <div class="dep2">
+              <ul>
+                  <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                  <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">공정관리</a>
+            <div class="dep2">
+              <ul>
+                  <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                  <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                  <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                  <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                  <li><a href="/cr/cr50/list.do">선수금</a></li>
+                  <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                  <li><a href="#">과거측량이력조회</a></li>
+                  <li><a href="#">인지세대장</a></li>
+                  <li><a href="#">일반접수처리</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">정산</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                </ul>
+              </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">성과</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측량이력조회</a></li>
+                    <li><a href="#">인지세대장</a></li>
+                    <li><a href="#">일반접수처리</a></li>
+                </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">결산</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="#">특수접수목록과거<br>이력조회</a></li>
+                    <li><a href="#">일반접수목록</a></li>
+                </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">계산서</a>
+            <div class="dep2">
+              <ul>
+                  <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                  <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">목표량</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                </ul>
+              </div>
+          </li>
+          <li>
+            <a href="/" onclick="return false;">통계</a>
+            <div class="dep2">
+                <ul>
+                    <li><a href="/cr/cr10/list.do">일반접수처리</a></li>
+                    <li><a href="/cr/cr20/list.do">특수접수처리</a></li>
+                    <li><a href="/cr/cr30/list.do">일반접수목록</a></li>
+                    <li><a href="/cr/cr40/list.do">특수접수목록</a></li>
+                    <li><a href="/cr/cr50/list.do">선수금</a></li>
+                    <li><a href="/cr/cr60/list.do">업무이관</a></li>
+                    <li><a href="#">과거측량이력조회</a></li>
+                    <li><a href="#">인지세대장</a></li>
+                    <li><a href="#">일반접수처리</a></li>
+                    <li><a href="#">특수접수처리</a></li>
+                    <li><a href="#">일반접수목록</a></li>
+                    <li><a href="#">특수접수목록</a></li>
+                </ul>
+            </div>
+          </li>
+        </ul>
+    </div>
+    <!--//gnb-->
+	<!--aside-->
+	<aside class="aside sub">
+    <ul>
+        <li>
+            <button type="button" class="btnManage">
+                <span>업무관리</span>
+            </button>
+            <!-- tabWrap -->
+            <div class="tabWrap type01">
+                <div class="btnArea tab01">
+                    <button type="button" class="btnPrevClose">
+                        <span class="hidden">이전</span>
+                    </button>
+                </div>
+                <!-- tabNav -->
+                <div class="tabNav">
+                    <ul class="tabList">
+                        <li class="tab01">
+                            <button type="button" class="btnMenu work">
+                                <span>업무처리</span>
+                            </button>
+                        </li>
+                        <li class="tab02">
+                            <button type="button" class="btnMenu status">
+                                <span>업무현황</span>
+                            </button>
+                        </li>
+                        <li class="tab03">
+                            <button type="button" class="btnMenu fav">
+                                <span>즐겨찾기</span>
+                            </button>
+                        </li>
+                        <li class="tab04">
+                            <button type="button" class="btnMenu myInfo">
+                                <span>내정보</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //tabNav -->
+
+                <!--tabContWrap-->
+                <div class="tabContWrap">
+
+                    <!-- tabCont -->
+                    <div class="tabCont">
+                        <!-- leftMenu -->
+                        <div class="leftMenu">
+                            <div class="btnArea">
+                                <button type="button" class="btnPrevClose">
+                                    <span class="hidden">이전</span>
+                                </button>
+                                <button type="button" class="btnAllClose">
+                                    <span class="hidden">처음으로</span>
+                                </button>
+                            </div>
+                            <!-- head -->
+                            <div class="head">
+                                <div class="inner">
+                                    <strong>업무처리</strong>
+                                    <div class="btnArea">
+                                        <button type="button" class="btnSideRefresh">
+                                            <span class="hidden">새로고침</span>
+                                        </button>
+                                        <button type="button" class="btnFilter">
+                                            <span class="hidden">필터</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //head -->
+                            <!-- cont -->
+                            <div class="cont">
+                                <!-- inner -->
+                                <div class="inner">
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <div class="flex sb">
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <span>가상계좌 수입(금일)</span>
+                                                    <div class="numBox">
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>일반</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>특수</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <span>미수 수수료</span>
+                                                    <div class="numBox">
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>일반</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>특수</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <div class="flex sb">
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <span>미결업무 현황</span>
+                                                    <div class="numBox">
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>일반</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>특수</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <span>미반환금 현황</span>
+                                                    <div class="numBox">
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>일반</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>특수</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <div class="flex sb">
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <span>전일접수</span>
+                                                    <div class="numBox">
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>일반</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>특수</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <span>금일 현황</span>
+                                                    <div class="numBox col3">
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>접수</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>출장</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>완료</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <div class="flex sb">
+                                                <!-- col -->
+                                                <div class="col full">
+                                                    <span>신용카드</span>
+                                                    <div class="numBox">
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>승인</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>청구</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>수입</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>초과예정</span>
+                                                        </div>
+                                                        <div class="item">
+                                                            <em class="blue">00</em>
+                                                            <span>강제취소</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <div class="flex sb">
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <span>콜센터 이첩</span>
+                                                    <div class="numBox">
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>일반</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <span>모바일 신청</span>
+                                                    <div class="numBox">
+                                                        <div class="item">
+                                                            <em class="red">00</em>
+                                                            <span>일반</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+                                </div>
+                                <!-- //inner -->
+                            </div>
+                            <!-- //cont -->
+                        </div>
+                        <!-- //leftMenu -->
+                    </div>
+                    <!-- //tabCont -->
+
+                    <!-- tabCont -->
+                    <div class="tabCont">
+                        <!-- leftMenu -->
+                        <div class="leftMenu">
+                            <div class="btnArea">
+                                <button type="button" class="btnPrevClose">
+                                    <span class="hidden">이전</span>
+                                </button>
+                                <button type="button" class="btnAllClose">
+                                    <span class="hidden">처음으로</span>
+                                </button>
+                            </div>
+                            <!-- head -->
+                            <div class="head">
+                                <div class="inner">
+                                    <strong>업무현황</strong>
+                                    <div class="btnArea">
+                                        <button type="button" class="btnSideRefresh">
+                                            <span class="hidden">새로고침</span>
+                                        </button>
+                                        <button type="button" class="btnFilter">
+                                            <span class="hidden">필터</span>
+                                    </button></div>
+                                </div>
+                            </div>
+                            <!-- //head -->
+                            <!-- cont -->
+                            <div class="cont overflow-y">
+                                <!-- inner -->
+                                <div class="inner">
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="titArea">
+                                                    <span>당일 지사업무 처리 현황</span>
+                                                    <em>단위(천원)</em>
+                                                </div>
+                                                <div class="graphArea" style="height: 146px;">그래프영역</div>
+                                            </div>
+                                            <!-- //col -->
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="flex sb">
+                                                    <div class="titArea">
+                                                        <span>2분기 실적 현황</span>
+                                                    </div>
+                                                    <div class="graphInfo">
+                                                        <span>목표량</span>
+                                                        <span class="mint">완료실적</span>
+                                                    </div>
+                                                </div>
+                                                <div class="graphArea" style="height: 146px;">그래프영역</div>
+                                            </div>
+                                            <!-- //col -->
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="titArea">
+                                                    <span>6월 MY 업무처리 현황</span>
+                                                </div>
+                                                <div class="graphArea type02" style="height: 240px;">그래프영역</div>
+                                            </div>
+                                            <!-- //col -->
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <!-- col -->
+                                            <div class="col">
+                                                <div class="flex sb">
+                                                    <div class="titArea">
+                                                        <span>전일 실적 현황</span>
+                                                    </div>
+                                                    <div class="graphInfo">
+                                                        <span class="lightBlue">전일</span>
+                                                        <span class="blue">금일</span>
+                                                    </div>
+                                                </div>
+                                                <div class="graphArea" style="height: 146px;">그래프영역</div>
+                                            </div>
+                                            <!-- //col -->
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                </div>
+                                <!-- //inner -->
+                            </div>
+                            <!-- //cont -->
+                        </div>
+                        <!-- //leftMenu -->
+                    </div>
+                    <!-- //tabCont -->
+
+                    <!-- tabCont -->
+                    <div class="tabCont">
+                        <!-- leftMenu -->
+                        <div class="leftMenu">
+                            <div class="btnArea">
+                                <button type="button" class="btnPrevClose">
+                                    <span class="hidden">이전</span>
+                                </button>
+                                <button type="button" class="btnAllClose">
+                                    <span class="hidden">처음으로</span>
+                                </button>
+                            </div>
+                            <!-- head -->
+                            <div class="head">
+                                <div class="inner">
+                                    <strong>즐겨찾기</strong>
+                                    <div class="btnArea">
+                                        <button type="button" class="btnSideRefresh">
+                                            <span class="hidden">새로고침</span>
+                                        </button>
+                                        <button type="button" class="btnFilter">
+                                            <span class="hidden">필터</span>
+                                    </button></div>
+                                </div>
+                            </div>
+                            <!-- //head -->
+                            <!-- cont -->
+                            <div class="cont">
+                                <!-- inner -->
+                                <div class="inner">
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <div class="btnArea flex end">
+                                                <button type="button" class="btnWhite">
+                                                    <span>편집완료</span>
+                                                </button>
+                                            </div>
+                                            <!-- boxList -->
+                                            <div class="boxList">
+                                                <ul class="layerGroup">
+                                                    <li>
+                                                        <div class="group">
+                                                            <span class="title">일반접수처리</span>
+                                                            <button type="button" class="btnMore"><span class="hidden">더보기</span></button>
+                                                            <!-- innerMore -->
+                                                            <div class="innerMore">
+                                                                <div class="btnArea">
+                                                                    <button type="button" class="btnWhite btnRemove">
+                                                                        <span>삭제</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <!-- //innerMore -->
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="group">
+                                                            <span class="title">청구통합관리</span>
+                                                            <button type="button" class="btnMore"><span class="hidden">더보기</span></button>
+                                                            <!-- innerMore -->
+                                                            <div class="innerMore">
+                                                                <div class="btnArea">
+                                                                    <button type="button" class="btnWhite btnRemove">
+                                                                        <span>삭제</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <!-- //innerMore -->
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="group">
+                                                            <span class="title">세금계산서 발행</span>
+                                                            <button type="button" class="btnMore"><span class="hidden">더보기</span></button>
+                                                            <!-- innerMore -->
+                                                            <div class="innerMore">
+                                                                <div class="btnArea">
+                                                                    <button type="button" class="btnWhite btnRemove">
+                                                                        <span>삭제</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <!-- //innerMore -->
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="group">
+                                                            <span class="title">현금영수증 발행</span>
+                                                            <button type="button" class="btnMore"><span class="hidden">더보기</span></button>
+                                                            <!-- innerMore -->
+                                                            <div class="innerMore">
+                                                                <div class="btnArea">
+                                                                    <button type="button" class="btnWhite btnRemove">
+                                                                        <span>삭제</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <!-- //innerMore -->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- //boxList -->
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+                                    <p class="bottomTxt">클릭시 해당 업무로 이동합니다.</p>
+                                </div>
+                                <!-- //inner -->
+                            </div>
+                            <!-- //cont -->
+                        </div>
+                        <!-- //leftMenu -->
+                    </div>
+                    <!-- //tabCont -->
+
+                    <!-- tabCont -->
+                    <div class="tabCont">
+                        <!-- leftMenu -->
+                        <div class="leftMenu">
+                            <div class="btnArea">
+                                <button type="button" class="btnPrevClose">
+                                    <span class="hidden">이전</span>
+                                </button>
+                                <button type="button" class="btnAllClose">
+                                    <span class="hidden">처음으로</span>
+                                </button>
+                            </div>
+                            <!-- head -->
+                            <div class="head">
+                                <div class="inner">
+                                    <strong>내정보</strong>
+                                    <div class="btnArea">
+                                        <button type="button" class="btnSideRefresh">
+                                            <span class="hidden">새로고침</span>
+                                        </button>
+                                        <button type="button" class="btnFilter">
+                                            <span class="hidden">필터</span>
+                                    </button></div>
+                                </div>
+                            </div>
+                            <!-- //head -->
+                            <!-- cont -->
+                            <div class="cont">
+                                <!-- inner -->
+                                <div class="inner">
+                                    <!-- rowBox -->
+                                    <div class="rowBox">
+                                        <!-- boxInner -->
+                                        <div class="boxInner">
+                                            <div class="profileCont">
+                                                <div class="profile">
+                                                    <img src="../images/main/ico-profile.png" alt="프로필">
+                                                </div>
+                                                <div class="infoTxt">
+                                                    <ul>
+                                                        <li>
+                                                            <p>사번 : <span>000000</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <p>성명 : <span>홍길동</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <p>지사 : <span>전주지사</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <p>권한 : <span>행정담당</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <p>전화번호 : <span>063-000-0000</span></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //boxInner -->
+                                    </div>
+                                    <!-- //rowBox -->
+
+                                </div>
+                                <!-- //inner -->
+                            </div>
+                            <!-- //cont -->
+                        </div>
+                        <!-- //leftMenu -->
+                    </div>
+                    <!-- //tabCont -->
+
+                </div>
+                <!--//tabContWrap-->
+            </div>
+            <!-- //tabWrap -->
+
+        </li>
+        <li>
+            <button type="button" class="btnTop">
+                <span>TOP</span>
+            </button>
+        </li>
+    </ul>
+</aside>
+	<!--//aside-->
+	<div class="wrap sub">
+		<script type="text/javascript" src="/js/lx/aio/biz/sg/sg_cmm.js"></script>
+		<script type="text/javascript" src="/js/lx/aio/biz/sg/sg20/sg20m.js"></script>
+		<style>
+		.multi-line-css {
+			white-space: pre;
+		}
+		.multiline {
+			white-space: pre;
+		}
+		.right {
+			text-align: right;
+		}
+		.rightMultiLine {
+			text-align: right;
+			white-space: pre;
+		}
+		.span-right{
+			float: right;
+		}
+		</style>
+		<div class="depth-tab-box" style="float: right;">
+			<ul class="depth-tab type01">
+				<li id="tab1" class="on"><a href="">1</a></li>
+				<li id="tab2"><a href="">2</a></li>
+			</ul>
+		</div>
+		<div class="depth-box only-depth tab on clb">
+			<div class="depth">
+				<div class="depth-title-box clb">
+					<div class="left-box">
+						<span class="depth-title">검색조건</span>
+					</div>
+					<div class="right-box">
+						<button id="btnExcel" class="btn icon exel button dkBlue va-t" onclick="exportExcelGrid1()">엑셀</button>
+						<button id="btnSearch" class="btn button wd50 dkBlue va-t" onclick="selectResultBookRecpt()">검색</button>
+						 <button class="btn toggle on va-b">
+							 <span class="hidden">접기</span>
+						 </button>
+					</div>
+				</div>
+
+
+				<div class="depth-conts type01">
+					<div class="depth-conts-table">
+						<div class="depth-conts-row">
+							<div class="depth-conts-cell">
+								<span class="depth-conts-cell-title wd80">회계년도</span>
+								<input type="text" id="txtProcYear" class="year wd120">
+								<!-- <div id="instt1"></div> -->
+								<!-- <script type="text/javascript">
+									window['instt1'] = new insttModule();
+									$(window).onload
+									$(document).ready(function() {
+										window['instt1']
+										.startup({
+											id : 'instt1',
+											depth :'3',
+											showOld : 'false',
+											hqCode : '',
+											brhCode : '',
+											jgrcCode : '',
+											oldChecked : '',
+											addHq : '',
+											addAll : '',
+											changeCallbackFunc : function() {
+
+											},
+											jgrcEnabled : ''
+										});
+									});
+								</script> -->
+								<span>
+									<span class="depth-conts-cell-title wd100">기관</span>
+									<select name="" id="" class="wd120">
+										<option value="">전체</option>
+									</select>
+									<select name="" id="" class="wd120">
+										<option value="">전체</option>
+									</select>
+									<select name="" id="" class="wd120">
+										<option value="">전체</option>
+									</select>
+									<p class="checkbox">
+										<input type="checkbox" id="sp-changeJgrcYn" class="hidden">
+										<label for="sp-changeJgrcYn">(구)</label>
+									</p>
+									<span class="depth-conts-cell-title wd100">검색기준일</span>
+									<input type="text" id="dateCert" class="date cal">
+								</span>
+							</div>
+						</div>
+						<!-- <div class="depth-conts-row">
+							<div id="searchBox1" class="depth-conts-cell">
+								<span id="spanCboSpcljob" class="depth-conts-cell-title wd95">업무구분</span>
+								<select name="" id="" class="wd130">
+									<option value="">전체</option>
+								</select>
+								<div id="cboSpcljob"></div>
+								<script type="text/javascript">
+									window['cboSpcljob'] = new selectCodeModule();
+									$(document).ready(function() {
+										window['cboSpcljob']
+										.startup({
+											id : 'cboSpcljob',
+											codeClcd : '022',
+											addAll : 'true',
+											uiCode : '',
+											value : '',
+											style : 'width:100px',
+											changeCallbackFunc : function() {
+
+											}
+										});
+									});
+								</script>
+
+							</div>
+							<div id="searchBox2" class="depth-conts-cell" style="display: none;">
+								<span id="spanDf" class="depth-conts-cell-title">수령일자</span>
+								<span>
+									<input type="text" id="date-receipt1" class="date" readonly>
+									<label for="date-receipt1"><img src="/images/common/calendar.png" alt="달력"></label>
+								</span>
+								<span>
+									<input type="text" id="date-receipt2" class="date" readonly>
+									<label for="date-receipt2"><img src="/images/common/calendar.png" alt="달력"></label>
+								</span>
+								<div id="cboJitemNm"></div>
+								<script type="text/javascript">
+									window['cboJitemNm'] = new jitemModule();
+									$(document).ready(function() {
+										window['cboJitemNm']
+										.startup({
+											id : 'cboJitemNm',
+											defaultJobGbn : '',
+											showJobGbn : 'false',
+											showFeeApplc : 'false',
+											defaultMsgType : '1',
+											spclJobAt : '',
+											useAtDisabled : '',
+											changeCallbackFunc : function() {
+
+											},
+											createCompleteFunc : function() {
+
+											}
+
+										});
+									});
+								</script>
+								<span id="spanSurvrectSn" class="depth-conts-cell-title">접수번호</span>
+								<input type="text" id="survRectSn">
+								<span id="spanText" class="span-right c-red" style="display: none">※성과도 교부 처리한 건은 교부취소 후 처리하여야 합니다.</span>
+							</div>
+						</div> -->
+					</div>
+				</div>
+
+				<div id="gridDiv1" class="depth-conts-grid-box type02">
+					<div id="dg" class="depth-conts-grid type01 over-o" style="width: 100%; height: 250px;"><div tabindex="-1" class="rg-root rg-grid" style="position: relative; width: 100%; height: 100%; box-sizing: border-box; overflow: hidden; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); cursor: default;"><div class="" style="position: absolute; box-sizing: border-box; cursor: default; left: 0px; top: 0px; width: 0px; height: 0px;"><div style="position: absolute; box-sizing: border-box; overflow: hidden !important; left: 0px; top: 0px; width: 1894px; height: 644px;"><div class="" style="position: absolute; box-sizing: border-box; left: 0px; top: 0px; width: 0px; height: 0px;"><div class="" style="position: absolute; box-sizing: border-box; left: 0px; top: 0px; width: 1894px; height: 644px;"><div class="rg-body" style="position: absolute; box-sizing: border-box; overflow: hidden; left: 0px; top: 40px; width: 1894px; height: 604px;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead><tr aria-hidden="true" style="border: 0px none !important;"><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 51px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 127px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 127px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 191px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 114px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 114px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 306px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 88px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 128px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 114px;"></th></tr></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; left: 0px; top: 0px; width: 0px; height: 0px;"><div class="" style="position: absolute; box-sizing: border-box; left: 0px; top: 0px; width: 0px; height: 0px;"></div></div><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div class="rg-header" style="position: absolute; box-sizing: border-box; overflow: hidden; left: 0px; top: 0px; width: 1894px; height: 40px; cursor: default;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead><tr aria-hidden="true" style="border: 0px none !important;"><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 51px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 127px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 127px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 191px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 114px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 114px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 306px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 89px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 88px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 128px;"></th><th scope="col" style="visibility: hidden !important; margin: 0px !important; padding: 0px !important; font-size: 0px !important; line-height: 0px !important; height: 0px; width: 114px;"></th></tr></thead><tbody><tr style="height: 25px;"><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><input type="checkbox" class="rg-header-check" style="position: relative; display: inline-block; vertical-align: middle;"><span> </span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>업무</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>종목</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>접수일자</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>총계정</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>접수번호</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>결재문서번호</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>도면전자진행상태</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>처리상태</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>전자결재진행상태</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>토지소재지</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>축척</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>지번수</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>원면적</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>측량일</span></div></td><td class="rg-header-cell"><div class="rg-header-renderer" style="max-height: 39px; overflow: hidden;"><span>측량팀장</span></div></td></tr></tbody></table></div></div><div style="position: absolute; box-sizing: border-box; display: none;"><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; display: none;"><div style="position: absolute; box-sizing: border-box;"></div></div><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div></div><div style="position: absolute; box-sizing: border-box; display: none;"><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; display: none;"><div style="position: absolute; box-sizing: border-box;"></div></div><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div></div><div style="position: absolute; box-sizing: border-box; display: none;"><div class="rg-rowbarcontainer" style="position: absolute; box-sizing: border-box; overflow: hidden;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead><tr aria-hidden="true" style="border: 0px none !important;"></tr></thead><tbody></tbody></table><div style="position: absolute; box-sizing: border-box; display: none;"></div><div style="position: absolute; box-sizing: border-box; display: none;"></div><div style="position: absolute; box-sizing: border-box; display: none;"></div></div><div style="position: absolute; box-sizing: border-box; overflow: hidden;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead><tr aria-hidden="true" style="border: 0px none !important;"></tr></thead><tbody><tr style="height: 40px;"></tr></tbody></table></div></div><div style="position: absolute; box-sizing: border-box; display: none;"><div style="position: absolute; box-sizing: border-box; overflow: hidden;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div><div style="position: absolute; box-sizing: border-box; overflow: hidden;"><table class="rg-table" style="table-layout: fixed !important; width: 100% !important;"><thead></thead><tbody></tbody></table></div></div><div class="" style="position: absolute; box-sizing: border-box; left: -10px; top: -10px; width: 1px; height: 1px;"><div style="position: absolute; box-sizing: border-box; overflow: hidden; display: none;"><span class="rg-group-panel-message"></span></div></div><div style="position: absolute; box-sizing: border-box; overflow: hidden !important; pointer-events: none !important; display: none;"></div><div class="" style="position: absolute; box-sizing: border-box; left: 0px; top: 0px; width: 0px; height: 0px;"></div><div class="" style="position: absolute; box-sizing: border-box; left: 0px; top: 0px; width: 0px; height: 0px;"><div style="position: absolute; box-sizing: border-box; pointer-events: none !important; display: none;"></div><div style="position: absolute; box-sizing: border-box; pointer-events: none !important; display: none;"></div><div style="position: absolute; box-sizing: border-box; pointer-events: none !important; display: none;"></div><div style="position: absolute; box-sizing: border-box; pointer-events: none !important; background: none !important; border: none !important; overflow: hidden !important; display: none;"><div style="position: absolute; box-sizing: border-box; pointer-events: none !important;"></div></div><div style="position: absolute; box-sizing: border-box; pointer-events: none !important; background: none !important; border: none !important; overflow: hidden !important; display: none;"><div style="position: absolute; box-sizing: border-box; pointer-events: none !important;"></div></div></div><div style="position: absolute; box-sizing: border-box; display: none;"><div style="position: absolute; box-sizing: border-box;"></div><div style="position: absolute; box-sizing: border-box;"></div><div style="position: absolute; box-sizing: border-box;"></div><div style="position: absolute; box-sizing: border-box;"></div></div><div style="position: absolute; box-sizing: border-box; display: none;"><div style="position: absolute; box-sizing: border-box;"></div><div style="position: absolute; box-sizing: border-box;"></div><div style="position: absolute; box-sizing: border-box;"></div><div style="position: absolute; box-sizing: border-box;"></div></div><div style="position: absolute; box-sizing: border-box; display: none;"></div></div><div style="position: absolute; box-sizing: border-box; display: none;"><span>표시할 데이터가 없습니다.</span></div></div></div><div class="rg-body"><table class="rg-table" style="width: 1000px; height: 1px; left: -10000px; position: absolute;"><tbody><tr class="rg-rowgroup-footer"><td class="rg-rowgroup-footer-cell"><div>AYwyhi우리테크</div></td></tr></tbody></table></div><span style="position: absolute; left: -10000px; top: -10000px; display: block;"></span><input type="checkbox" tabindex="-1" style="position: absolute; left: -1000px; top: -11000px; display: block;"><div spellcheck="false" aria-hidden="true" class="rg-editor-container" style="position: absolute; width: 0px; height: 0px; padding: 0px; margin: 0px; border: none; box-shadow: none;"><input aria-hidden="true" autocomplete="off" tabindex="-1" class="rg-editor rg-text-editor" style="position: absolute; box-sizing: border-box; margin: 0px; padding: 0px 2px; overflow-wrap: normal; overflow: hidden; resize: none; border: none; outline: none; left: 0px; top: 0px; width: 100%; height: 100%; -webkit-user-modify: read-write-plaintext-only; white-space: pre; transform: translateZ(0px);"></div></div></div>
+				</div>
+				<div id="gridDiv2" class="depth-conts-grid-box type03" style="height: 100%; display: none;">
+					<div id="grid2" class="depth-conts-grid type01 over-o"></div>
+				</div>
+				<div id="gridDiv3" class="depth-conts-grid-box type03" style="height: 100%; display: none;">
+					<div id="grid3" class="depth-conts-grid type01 over-o"></div>
+				</div>
+				<div id="gridDiv4" class="depth-conts-grid-box type03" style="height: 100%; display: none;">
+					<div id="grid4" class="depth-conts-grid type01 over-o" style="display: block;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </div>
+
+
+<div class="popup" data-popup="example">
+    <div class="popup-inner" style="width: 659px; left:20%;">
+        <div class="popup-title-box clb">
+            <div class="left-box">
+                <span class="popup-title">일반 법 / 조례작성</span>
+            </div>
+            <div class="right-box">
+                <a class="popup-close btn type-onlyicon close" data-popup-close="example" href="#">
+                    <span class="hidden">닫기</span>
+                </a>
+            </div>
+        </div><!-- popup-title end -->
+        <div class="popup-conts clb">
+            <div class="popup-conts-table">
+                <div class="popup-conts-row">
+                    <div class="popup-conts-cell flex ac sb">
+                        <span class="popup-conts-cell-title wd80">해당소관청</span>
+                        <span>
+                            <div class="radioGroup">
+                                <p class="radio">
+                                    <input type="radio" id="r01" class="hidden" name="rd">
+                                    <label for="r01">전국전용</label>
+                                </p>
+                                <p class="radio">
+                                    <input type="radio" id="r02" class="hidden" name="rd">
+                                    <label for="r02">소관청적용</label>
+                                </p>
+                            </div>
+                        </span>
+                        <span>
+                            <select name="" id="" class="wd120 disabled">
+                                <option value="">서울지역본부</option>
+                            </select>
+                            <select name="" id="" class="wd120 disabled">
+                                <option value="">공간정보사업처</option>
+                            </select>
+                            <select name="" id="" class="wd120 disabled">
+                                <option value="">공간정보사업처</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="popup-conts-row">
+                    <div class="popup-conts-cell">
+                        <span class="popup-conts-cell-title wd80">측량목적/종목</span>
+                        <span>
+                            <button class="btn button popButton">측량목적/종목선택</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="popup-conts-row">
+                    <div class="popup-conts-cell flex end">
+                        <div class="right-box reduce">
+                            <div class="depth-conts-grid tableScroll">
+                                <table class="t-table type00">
+                                    <caption class="hidden">측량목적/종목선택 테이블</caption>
+                                    <colgroup>
+                                        <col width="179px">
+                                        <col width="179px">
+                                        <col width="auto">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">측량목적키워드</th>
+                                            <th scope="col">측량목적</th>
+                                            <th scope="col">측량종목</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <div class="overflow-y" style="max-height: 82px;">
+                                        <table class="t-table type00">
+                                            <caption class="hidden">측량목적/종목선택 테이블</caption>
+                                            <colgroup>
+                                                <col width="179px">
+                                                <col width="179px">
+                                                <col width="auto">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+												<tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup-conts-row">
+                    <div class="popup-conts-cell">
+                        <span class="popup-conts-cell-title wd80">분류선택</span>
+                        <span>
+                            <div class="radioGroup">
+                                <p class="radio">
+                                    <input type="radio" id="r03" class="hidden" name="rd">
+                                    <label for="r03">법</label>
+                                </p>
+                                <p class="radio">
+                                    <input type="radio" id="r04" class="hidden" name="rd">
+                                    <label for="r04">조례</label>
+                                </p>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="popup-conts-row">
+                    <div class="popup-conts-cell">
+                        <span class="popup-conts-cell-title wd80">사용여부</span>
+                        <span>
+                            <div class="radioGroup">
+                                <p class="radio">
+                                    <input type="radio" id="r05" class="hidden" name="rd">
+                                    <label for="r05">사용</label>
+                                </p>
+                                <p class="radio">
+                                    <input type="radio" id="r06" class="hidden" name="rd">
+                                    <label for="r06">미사용</label>
+                                </p>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="popup-conts-row">
+                    <div class="popup-conts-cell flex ac">
+                        <span class="popup-conts-cell-title wd80">법/조례조항</span>
+                        <span class="flex full">
+                            <input type="text" class="full">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="popup-conts-row">
+                    <div class="popup-conts-cell flex ac">
+                        <span class="popup-conts-cell-title wd80">법/조례명</span>
+                        <span class="flex full">
+                            <input type="text" class="full">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="popup-conts-row">
+                    <div class="popup-conts-cell">
+                       <div class="depth-title-box">
+                           <span class="depth-title bullet type01">내용</span>
+                       </div>
+                       <div class="depth-conts" style="height:233px;">
+                           
+                       </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="btn-box2 txt-c red">
+                <button id="changeRectDeBtn" class="btn on red">저장</button>
+            </div>
+        </div>
+        </div><!-- popup-conts end -->
+</div>
+
+
+<div class="popup popShow" data-popup="example" style="display: none;">
+    <div class="popup-inner" style="width: 537px; left:60%;">
+        <div class="popup-title-box clb">
+            <div class="left-box">
+                <span class="popup-title">측량목적 및 종목선택</span>
+            </div>
+            <div class="right-box">
+                <a class="popup-close btn type-onlyicon close" data-popup-close="example" href="#">
+                    <span class="hidden">닫기</span>
+                </a>
+            </div>
+        </div><!-- popup-title end -->
+        <div class="popup-conts clb">
+            <div class="depth-conts-grid tableScroll" style="display: inherit;">
+                <table class="t-table type00 hover blue">
+                    <caption class="hidden">측량목적 및 종목선택</caption>
+                    <colgroup>
+                        <col width="110px">
+                        <col width="210px">
+                        <col width="100px">
+                        <col width="auto">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">측량목적키워드</th>
+                            <th scope="col">측량목적</th>
+                            <th scope="col">측량종목</th>
+                            <th scope="col">사용여부</th>
+                        </tr>
+                    </thead>
+                </table>
+				<div class="overflow-y" style="max-height:277px;">
+					<table class="t-table type00">
+						<caption class="hidden">측량목적 및 종목선택</caption>
+						<colgroup>
+							<col width="110px">
+							<col width="210px">
+							<col width="100px">
+							<col width="auto">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">임야의 한부분에 건축허가</td>
+								<td class="txt-c">등록전환</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk01" class="hidden">
+										<label for="chk01"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">임야의 한부분에 건축허가</td>
+								<td class="txt-c">분할측량</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk02" class="hidden">
+										<label for="chk02"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">임야의 한부분에 건축허가</td>
+								<td class="txt-c">지적현황</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk03" class="hidden">
+										<label for="chk03"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">건물준공</td>
+								<td class="txt-c">등록전환</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk04" class="hidden">
+										<label for="chk04"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">건물준공</td>
+								<td class="txt-c">분할측량</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk05" class="hidden">
+										<label for="chk05"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">건물준공</td>
+								<td class="txt-c">경계복원</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk06" class="hidden">
+										<label for="chk06"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">건축물 대장 등록 (등재)</td>
+								<td class="txt-c">경계복원</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk07" class="hidden">
+										<label for="chk07"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">건축물 대장 등록 (등재)</td>
+								<td class="txt-c">지적현황</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk08" class="hidden">
+										<label for="chk08"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">개발행위 (건축, 납골묘)</td>
+								<td class="txt-c">등록전환</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk09" class="hidden">
+										<label for="chk09"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">개발행위 (건축, 납골묘)</td>
+								<td class="txt-c">분할측량</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk10" class="hidden">
+										<label for="chk10"></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td class="txt-c">건축</td>
+								<td class="txt-c">개발행위 (건축, 납골묘)</td>
+								<td class="txt-c">분할측량</td>
+								<td class="txt-c">
+									<p class="checkbox">
+										<input type="checkbox" id="chk11" class="hidden">
+										<label for="chk11"></label>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+            </div>
+
+            <div class="btn-box2 txt-c red">
+                <button id="changeRectDeBtn" class="btn on red">저장</button>
+            </div>
+        </div>
+        </div><!-- popup-conts end -->
+</div>
+
+	<!--quick-->
+	<div id="quick" class="type02">
+    <ul>
+        <li>
+            <a href="javascript:fn_btn_infoSearch();">
+                <i class="star"></i>
+            </a>
+            <div class="desc">
+                <span>상담</span>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                <i class="bookMark"></i>
+            </a>
+            <div class="desc">
+                <span>북마크</span>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                <i class="knowledge"></i>
+            </a>
+            <div class="desc">
+                <span>상담지식관리</span>
+            </div>
+        </li>
+    </ul>
+</div>
+	<!--//quick-->
+	<div class="loader-wrap" style="display:none;">
+		<div class="loader-box">
+			<div class="loader">Loading...</div>
+		</div>
+	</div>
+</body>
+<!-- <script type="text/javascript">
+$(document).ready(function() {
+	sideCntInit();
+
+	if(getUserInfo().CHRG_AUTHR_CLCD == '20'){
+		$("#cti").css("display", "block");
+	}
+});
+</script> -->
+</html>

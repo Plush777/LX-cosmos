@@ -1,0 +1,614 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+    <head>
+        @@include('include/head_p.html')
+	</head>
+<body>
+    <!--aside-->
+    <aside class="aside">
+        <ul>
+            <li>
+                <button type="button" class="btnManage">
+                    <span>업무관리</span>
+                </button>
+                <!-- tabWrap -->
+                <div class="tabWrap type01">
+                    <div class="btnArea tab01">
+                        <button type="button" class="btnPrevClose">
+                            <span class="hidden">이전</span>
+                        </button>
+                    </div>
+                    <!-- tabNav -->
+                    <div class="tabNav">
+                        <ul class="tabList">
+                            <li class="tab01">
+                                <button type="button" class="btnMenu work">
+                                    <span>업무처리</span>
+                                </button>
+                            </li>
+                            <li class="tab02">
+                                <button type="button" class="btnMenu status">
+                                    <span>업무현황</span>
+                                </button>
+                            </li>
+                            <li class="tab03">
+                                <button type="button" class="btnMenu fav">
+                                    <span>즐겨찾기</span>
+                                </button>
+                            </li>
+                            <li class="tab04">
+                                <button type="button" class="btnMenu myInfo">
+                                    <span>내정보</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //tabNav -->
+    
+                    <!--tabContWrap-->
+                    <div class="tabContWrap">
+    
+                        <!-- tabCont -->
+                        <div class="tabCont">
+                            <!-- leftMenu -->
+                            <div class="leftMenu">
+                                <div class="btnArea">
+                                    <button type="button" class="btnPrevClose">
+                                        <span class="hidden">이전</span>
+                                    </button>
+                                    <button type="button" class="btnAllClose">
+                                        <span class="hidden">처음으로</span>
+                                    </button>
+                                </div>
+                                <!-- head -->
+                                <div class="head">
+                                    <div class="inner">
+                                        <strong>업무처리</strong>
+                                        <div class="btnArea">
+                                            <button type="button" class="btnSideRefresh">
+                                                <span class="hidden">새로고침</span>
+                                            </button>
+                                            <button type="button" class="btnFilter">
+                                                <span class="hidden">필터</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //head -->
+                                <!-- cont -->
+                                <div class="cont">
+                                    <!-- inner -->
+                                    <div class="inner">
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <div class="flex sb">
+                                                    <!-- col -->
+                                                    <div class="col">
+                                                        <span>가상계좌 수입(금일)</span>
+                                                        <div class="numBox">
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>일반</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>특수</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                    <!-- col -->
+                                                    <div class="col">
+                                                        <span>미수 수수료</span>
+                                                        <div class="numBox">
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>일반</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>특수</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                </div>
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <div class="flex sb">
+                                                    <!-- col -->
+                                                    <div class="col">
+                                                        <span>미결업무 현황</span>
+                                                        <div class="numBox">
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>일반</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>특수</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                    <!-- col -->
+                                                    <div class="col">
+                                                        <span>미반환금 현황</span>
+                                                        <div class="numBox">
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>일반</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>특수</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                </div>
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <div class="flex sb">
+                                                    <!-- col -->
+                                                    <div class="col">
+                                                        <span>전일접수</span>
+                                                        <div class="numBox">
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>일반</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>특수</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                    <!-- col -->
+                                                    <div class="col">
+                                                        <span>금일 현황</span>
+                                                        <div class="numBox col3">
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>접수</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>출장</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>완료</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                </div>
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <div class="flex sb">
+                                                    <!-- col -->
+                                                    <div class="col full">
+                                                        <span>신용카드</span>
+                                                        <div class="numBox">
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>승인</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>청구</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>수입</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>초과예정</span>
+                                                            </div>
+                                                            <div class="item">
+                                                                <em class="blue">00</em>
+                                                                <span>강제취소</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                </div>
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <div class="flex sb">
+                                                    <!-- col -->
+                                                    <div class="col">
+                                                        <span>콜센터 이첩</span>
+                                                        <div class="numBox">
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>일반</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                    <!-- col -->
+                                                    <div class="col">
+                                                        <span>모바일 신청</span>
+                                                        <div class="numBox">
+                                                            <div class="item">
+                                                                <em class="red">00</em>
+                                                                <span>일반</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //col -->
+                                                </div>
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+                                    </div>
+                                    <!-- //inner -->
+                                </div>
+                                <!-- //cont -->
+                            </div>
+                            <!-- //leftMenu -->
+                        </div>
+                        <!-- //tabCont -->
+    
+                        <!-- tabCont -->
+                        <div class="tabCont">
+                            <!-- leftMenu -->
+                            <div class="leftMenu">
+                                <div class="btnArea">
+                                    <button type="button" class="btnPrevClose">
+                                        <span class="hidden">이전</span>
+                                    </button>
+                                    <button type="button" class="btnAllClose">
+                                        <span class="hidden">처음으로</span>
+                                    </button>
+                                </div>
+                                <!-- head -->
+                                <div class="head">
+                                    <div class="inner">
+                                        <strong>업무현황</strong>
+                                        <div class="btnArea">
+                                            <button type="button" class="btnSideRefresh">
+                                                <span class="hidden">새로고침</span>
+                                            </button>
+                                            <button type="button" class="btnFilter">
+                                                <span class="hidden">필터</span>
+                                        </button></div>
+                                    </div>
+                                </div>
+                                <!-- //head -->
+                                <!-- cont -->
+                                <div class="cont overflow-y">
+                                    <!-- inner -->
+                                    <div class="inner">
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <div class="titArea">
+                                                        <span>당일 지사업무 처리 현황</span>
+                                                        <em>단위(천원)</em>
+                                                    </div>
+                                                    <div class="graphArea" style="height: 146px;">그래프영역</div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <div class="flex sb">
+                                                        <div class="titArea">
+                                                            <span>2분기 실적 현황</span>
+                                                        </div>
+                                                        <div class="graphInfo">
+                                                            <span>목표량</span>
+                                                            <span class="mint">완료실적</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="graphArea" style="height: 146px;">그래프영역</div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <div class="titArea">
+                                                        <span>6월 MY 업무처리 현황</span>
+                                                    </div>
+                                                    <div class="graphArea type02" style="height: 240px;">그래프영역</div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <!-- col -->
+                                                <div class="col">
+                                                    <div class="flex sb">
+                                                        <div class="titArea">
+                                                            <span>전일 실적 현황</span>
+                                                        </div>
+                                                        <div class="graphInfo">
+                                                            <span class="lightBlue">전일</span>
+                                                            <span class="blue">금일</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="graphArea" style="height: 146px;">그래프영역</div>
+                                                </div>
+                                                <!-- //col -->
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                    </div>
+                                    <!-- //inner -->
+                                </div>
+                                <!-- //cont -->
+                            </div>
+                            <!-- //leftMenu -->
+                        </div>
+                        <!-- //tabCont -->
+    
+                        <!-- tabCont -->
+                        <div class="tabCont">
+                            <!-- leftMenu -->
+                            <div class="leftMenu">
+                                <div class="btnArea">
+                                    <button type="button" class="btnPrevClose">
+                                        <span class="hidden">이전</span>
+                                    </button>
+                                    <button type="button" class="btnAllClose">
+                                        <span class="hidden">처음으로</span>
+                                    </button>
+                                </div>
+                                <!-- head -->
+                                <div class="head">
+                                    <div class="inner">
+                                        <strong>즐겨찾기</strong>
+                                        <div class="btnArea">
+                                            <button type="button" class="btnSideRefresh">
+                                                <span class="hidden">새로고침</span>
+                                            </button>
+                                            <button type="button" class="btnFilter">
+                                                <span class="hidden">필터</span>
+                                        </button></div>
+                                    </div>
+                                </div>
+                                <!-- //head -->
+                                <!-- cont -->
+                                <div class="cont">
+                                    <!-- inner -->
+                                    <div class="inner">
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <div class="btnArea flex end">
+                                                    <button type="button" class="btnWhite">
+                                                        <span>편집완료</span>
+                                                    </button>
+                                                </div>
+                                                <!-- boxList -->
+                                                <div class="boxList">
+                                                    <ul class="layerGroup">
+                                                        <li>
+                                                            <div class="group">
+                                                                <span class="title">일반접수처리</span>
+                                                                <button type="button" class="btnMore"><span class="hidden">더보기</span></button>
+                                                                <!-- innerMore -->
+                                                                <div class="innerMore">
+                                                                    <div class="btnArea">
+                                                                        <button type="button" class="btnWhite btnRemove">
+                                                                            <span>삭제</span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- //innerMore -->
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="group">
+                                                                <span class="title">청구통합관리</span>
+                                                                <button type="button" class="btnMore"><span class="hidden">더보기</span></button>
+                                                                <!-- innerMore -->
+                                                                <div class="innerMore">
+                                                                    <div class="btnArea">
+                                                                        <button type="button" class="btnWhite btnRemove">
+                                                                            <span>삭제</span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- //innerMore -->
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="group">
+                                                                <span class="title">세금계산서 발행</span>
+                                                                <button type="button" class="btnMore"><span class="hidden">더보기</span></button>
+                                                                <!-- innerMore -->
+                                                                <div class="innerMore">
+                                                                    <div class="btnArea">
+                                                                        <button type="button" class="btnWhite btnRemove">
+                                                                            <span>삭제</span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- //innerMore -->
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="group">
+                                                                <span class="title">현금영수증 발행</span>
+                                                                <button type="button" class="btnMore"><span class="hidden">더보기</span></button>
+                                                                <!-- innerMore -->
+                                                                <div class="innerMore">
+                                                                    <div class="btnArea">
+                                                                        <button type="button" class="btnWhite btnRemove">
+                                                                            <span>삭제</span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- //innerMore -->
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- //boxList -->
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+                                        <p class="bottomTxt">클릭시 해당 업무로 이동합니다.</p>
+                                    </div>
+                                    <!-- //inner -->
+                                </div>
+                                <!-- //cont -->
+                            </div>
+                            <!-- //leftMenu -->
+                        </div>
+                        <!-- //tabCont -->
+    
+                        <!-- tabCont -->
+                        <div class="tabCont">
+                            <!-- leftMenu -->
+                            <div class="leftMenu">
+                                <div class="btnArea">
+                                    <button type="button" class="btnPrevClose">
+                                        <span class="hidden">이전</span>
+                                    </button>
+                                    <button type="button" class="btnAllClose">
+                                        <span class="hidden">처음으로</span>
+                                    </button>
+                                </div>
+                                <!-- head -->
+                                <div class="head">
+                                    <div class="inner">
+                                        <strong>내정보</strong>
+                                        <div class="btnArea">
+                                            <button type="button" class="btnSideRefresh">
+                                                <span class="hidden">새로고침</span>
+                                            </button>
+                                            <button type="button" class="btnFilter">
+                                                <span class="hidden">필터</span>
+                                        </button></div>
+                                    </div>
+                                </div>
+                                <!-- //head -->
+                                <!-- cont -->
+                                <div class="cont">
+                                    <!-- inner -->
+                                    <div class="inner">
+                                        <!-- rowBox -->
+                                        <div class="rowBox">
+                                            <!-- boxInner -->
+                                            <div class="boxInner">
+                                                <div class="profileCont">
+                                                    <div class="profile">
+                                                        <img src="../../images/main/ico-profile.png" alt="프로필">
+                                                    </div>
+                                                    <div class="infoTxt">
+                                                        <ul>
+                                                            <li>
+                                                                <p>사번 : <span>000000</span></p>
+                                                            </li>
+                                                            <li>
+                                                                <p>성명 : <span>홍길동</span></p>
+                                                            </li>
+                                                            <li>
+                                                                <p>지사 : <span>전주지사</span></p>
+                                                            </li>
+                                                            <li>
+                                                                <p>권한 : <span>행정담당</span></p>
+                                                            </li>
+                                                            <li>
+                                                                <p>전화번호 : <span>063-000-0000</span></p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- //boxInner -->
+                                        </div>
+                                        <!-- //rowBox -->
+    
+                                    </div>
+                                    <!-- //inner -->
+                                </div>
+                                <!-- //cont -->
+                            </div>
+                            <!-- //leftMenu -->
+                        </div>
+                        <!-- //tabCont -->
+    
+                    </div>
+                    <!--//tabContWrap-->
+                </div>
+                <!-- //tabWrap -->
+    
+            </li>
+            <li>
+                <button type="button" class="btnTop">
+                    <span>TOP</span>
+                </button>
+            </li>
+        </ul>
+    </aside>
+    <!--//aside-->
+</body>
+</html>
